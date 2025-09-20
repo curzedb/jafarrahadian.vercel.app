@@ -1,0 +1,55 @@
+---
+title: "Stock Price Prediction and Analysis APP"
+publishedAt: "2025-05-05"
+summary: "Applied LSTM, GRU, and 1D CNN algorithms on stock and cryptocurrency data to predict prices."
+tags: ['Python', 'Streamlit', 'Deep Learning', 'MLOps']
+images:
+  - "/images/projects/spp-app/foto-1.png"
+  - "/images/projects/spp-app/foto-2.png"
+  - "/images/projects/spp-app/foto-3.png"
+  - "/images/projects/spp-app/foto-4.png"
+team:
+  - name: "Jafar Rahadian"
+    role: "AI/ML Engineer and Full-Stack Web Dev"
+    avatar: "/images/foto.png"
+    linkedIn: "https://www.linkedin.com/in/jafar-rahadian/"
+---
+
+## Overview
+
+Market volatility often leaves investors seeking clarity. Inspired by these challenges, I developed a web application to provide a robust and automated approach to stock market analysis and prediction.
+The primary goal is to predict closing prices for various stock tickers (e.g., IHSG, MSFT) using several Neural Network models, all while incorporating foundational MLOps practices for automation and efficiency.
+
+## Key Features
+
+* **Dynamic Data Ingestion**: Utilizes the `yfinance` API to fetch the latest stock data and caches it in an SQLite database.
+* **Interactive EDA**: Provides an interactive Exploratory Data Analysis interface built with Streamlit.
+* **3 Deep Learning Models**: Trains and compares three different models (LSTM, CNN, and GRU) for the prediction task.
+* **Automated Hyperparameter Tuning**: Implements KerasTuner to automatically find the best hyperparameters for the models.
+* **Comprehensive Evaluation**: Delivers complete model evaluation using RMSE, MAPE, and R² metrics, complete with loss curve visualizations.
+* **Automated Weekly Retraining**: Uses GitHub Actions to automatically retrain the models every week, ensuring they stay up-to-date with market trends.
+* **7-Day Forecasting**: Capable of forecasting stock prices for the next seven days.
+
+## Technologies Used
+
+-   **Python**: As the primary language for data analysis, model training, and backend logic.
+-   **Streamlit**: To build and serve the interactive web application for data visualization and user input.
+-   **TensorFlow & Keras**: For building, training, and tuning the Deep Learning models (LSTM, CNN, GRU).
+-   **KerasTuner**: To automate the hyperparameter tuning process, ensuring optimal model performance.
+-   **Pandas & NumPy**: For data manipulation, cleaning, and preparation.
+-   **yfinance API**: As the source for dynamic, real-time stock market data ingestion.
+-   **SQLite**: For lightweight, on-premise virtual database caching to improve performance and avoid redundant API calls.
+-   **GitHub Actions**: To create an automated CI/CD pipeline for weekly model retraining, a core MLOps practice (UNDER MAINTENANCE).
+
+## Challenges and Learnings
+
+One key challenge was ensuring data consistency and handling missing values from the API, which required robust data cleaning pipelines. Another significant challenge was tuning the hyperparameters for three different neural network models efficiently; implementing KerasTuner was a major learning experience that automated this complex process. Setting up the automated weekly retraining workflow with GitHub Actions also provided deep insights into MLOps principles, bridging the gap between model development and production deployment.
+
+## Outcome
+
+The resulting web application provides an automated and user-friendly platform for stock analysis. The GRU model achieved a high accuracy with a test MAPE of ~0.99%, demonstrating the system's effectiveness. The project successfully incorporates MLOps principles, creating an efficient, self-updating prediction system that minimizes manual intervention and serves as a strong foundation for future development in financial AI.
+
+## Links
+
+* **[🔗 Live Demo on Streamlit](https://prediksisahamjafarrahadian.streamlit.app)**
+* **[📂 Source Code on GitHub](https://github.com/curzedb/prediksisaham_jafarrahadian)**

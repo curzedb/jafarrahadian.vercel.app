@@ -1,0 +1,47 @@
+---
+title: "AI-Site: Conversational AI for a Private Knowledge Base"
+publishedAt: "2025-08-30"
+summary: "A full-stack application leveraging Retrieval-Augmented Generation (RAG) to provide accurate, context-aware answers from private documents."
+tags: ['Python', 'Typescript', 'Javascript', 'FastAPI', 'Next.js', 'RAG', 'LLM', 'Vector Database']
+images:
+  - "/images/projects/aisite/foto-1.png"
+team:
+  - name: "Jafar Rahadian"
+    role: "AI/ML Engineer and Full-Stack Web Dev"
+    avatar: "/images/foto.png"
+    linkedIn: "https://www.linkedin.com/in/jafar-rahadian/"
+---
+
+## Overview
+
+AISite is a sophisticated, full-stack conversational AI platform designed to serve as an intelligent interface for an internal knowledge base. 
+It's core purpose is to allow users to get fast and accurate answers from a private collection of documents (PDFs, DOCX, etc.) through an intuitive chat interaction. 
+This approach prevents the AI from hallucinating or providing information from outside its designated knowledge scope.
+
+## Core AI Technology: RAG Pipeline
+
+The intelligence behind the chatbot is a meticulously designed Retrieval-Augmented Generation (RAG) pipeline, which ensures that every answer is grounded in the provided documents.
+
+1.  **Query Transformation**: The user's raw question is first processed by a small, fast LLM (like Llama 3.2 3B) to rephrase it into an optimized search query.
+2.  **Vector Retrieval**: The optimized query is used to search a FAISS vector database, retrieving the 16 most semantically similar text chunks from the knowledge base.
+3.  **Relevance Gate**: To reduce noise, a hybrid filter ensures only the most relevant chunks are used. The top-scoring chunk is always included, while the rest must pass a similarity threshold to proceed.
+4.  **Prompt Engineering**: The filtered, relevant text chunks are compiled into a single context block, which is then combined with the user's original question to create a final, context-rich prompt.
+5.  **Answer Generation**: This final prompt is sent to the main LLM (like Llama 3.2 3B or Deepseek Qwen 1.5B), which is strictly instructed to formulate an answer based *only* on the provided context.
+6.  **Streaming Response**: The generated answer is streamed back to the user word-by-word, creating a responsive and dynamic chat experience.
+
+## Full-Stack Architecture
+
+The application is built on a modern, decoupled architecture with three main components communicating via a REST API.
+
+-   **Frontend**: An interactive and responsive user interface built with **Next.js, TypeScript, and Material-UI (MUI)**.
+-   **Backend**: A high-performance API server built with **FastAPI (Python) and SQLAlchemy** for business logic, AI processing, and database interactions.
+-   **Database**: **Microsoft SQL Server** is used for persistent data storage, including user information, chat history, and document metadata.
+-   **Deployment**: The entire stack is deployed on a **Windows Server**, with processes managed by **NSSM** and unified under a single entry point using **IIS as a reverse proxy**.
+
+## Challenges and Learnings
+
+A primary challenge was fine-tuning the RAG pipeline to balance speed and accuracy, which involved experimenting with different chunking strategies and similarity thresholds for the relevance gate. Deploying and managing LLMs on a private Windows Server while ensuring low-latency streaming responses was a significant technical hurdle. This project provided deep, practical experience in applied RAG architecture, on-premise AI model deployment, and complex full-stack integration using modern frameworks like FastAPI and Next.js.
+
+## Outcome
+
+The project resulted in a secure, on-premise conversational AI tool that effectively eliminates hallucinations by grounding all responses in a verified knowledge base. It serves as an "intelligent search" engine, empowering users to find specific information through natural language conversation, drastically reducing knowledge retrieval time. The decoupled architecture provides a scalable and robust foundation, allowing for easy expansion of the knowledge base or upgrades to the underlying AI models in the future.

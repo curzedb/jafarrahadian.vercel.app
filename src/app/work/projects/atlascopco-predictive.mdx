@@ -1,0 +1,47 @@
+---
+title: "Predictive Monitoring System for Industrial Compressors (Atlas Copco)"
+publishedAt: "2025-09-15"
+summary: "A web application for real-time sensor data monitoring, anomaly detection, and predictive forecasting using custom-trained ML models."
+tags: ['Python', 'Typescript', 'Javascript', 'FastAPI', 'Next.js', 'Pytorch', 'WebSocket' ]
+images:
+  - "/images/projects/atlascopco-predictive/foto-1.png"
+team:
+  - name: "Jafar Rahadian"
+    role: "AI/ML Engineer and Full-Stack Web Dev"
+    avatar: "/images/foto.png"
+    linkedIn: "https://www.linkedin.com/in/jafar-rahadian/"
+---
+
+## Overview
+
+This project is a sophisticated web-based system designed to monitor real-time sensor data from Atlas Copco compressors. 
+The application integrates two core machine learning functionalities: **predictive forecasting** to predict future sensor values and **anomaly detection** to identify unusual operational patterns. 
+The system features an interactive dashboard for data visualization and a dedicated service for on-demand model training, providing a complete solution for proactive industrial maintenance.
+
+## Machine Learning Strategy
+
+The system employs a suite of custom-trained machine learning models, with tailored strategies for different types of sensor data to maximize accuracy and relevance.
+
+* **Time-Series Forecasting**: A **LightGBM Regressor** is used, with its strategy adapting to the data's nature:
+    * For standard data (e.g., temperature), it predicts values directly using lag features and rolling statistics.
+    * For cumulative data (e.g., consumption), it predicts the rate of change and reconstructs the total value.
+    * For imbalanced data (e.g., on/off flow), a **Random Forest Classifier** predicts the state, while LightGBM predicts the value only when the state is "on."
+* **Anomaly Detection**: Two distinct models are used based on data characteristics:
+    * A **PyTorch LSTM Autoencoder** is used for univariate time-series data. It learns to reconstruct normal signal patterns; a high reconstruction error indicates an anomaly.
+    * An **Isolation Forest** model is used for multivariate data, where it effectively isolates anomalous data points by leveraging multiple features simultaneously.
+
+## System Architecture & Technology
+
+The application is architected with three decoupled components to ensure the user interface remains responsive even during intensive ML model training.
+
+-   **Frontend**: An interactive dashboard built with **Next.js** and **ReactECharts** for dynamic data visualization. It communicates with the backend via both HTTP and WebSockets for real-time data and training logs.
+-   **Backend Service**: A **FastAPI (Python)** application responsible for serving sensor data and performing real-time anomaly detection using pre-trained models.
+-   **Prediction Service**: A dedicated **FastAPI (Python)** service that handles all heavy machine learning tasks, such as on-demand model training, and streams logs back to the user via WebSockets.
+
+## Challenges and Learnings
+
+A key challenge was designing a flexible machine learning pipeline that could apply different models and preprocessing techniques based on the unique characteristics of each sensor's data. Architecting the decoupled system with a separate prediction service was crucial for maintaining a responsive UI during resource-intensive model training. This project provided significant experience in building real-time, end-to-end ML systems, from advanced feature engineering for time-series data to deploying and managing asynchronous tasks with WebSockets.
+
+## Outcome
+
+The resulting system provides a powerful platform for proactive industrial maintenance, shifting the approach from reactive to predictive. The tailored ML strategy delivers highly accurate forecasts and reliable anomaly detection, enabling early warnings of potential equipment failure. The scalable, decoupled architecture successfully isolates heavy computation, ensuring a smooth and responsive user experience, and serves as a robust blueprint for future industrial IoT and predictive analytics applications.

@@ -1,0 +1,46 @@
+---
+title: "RFQ (Requests for Quotation) Automation APP"
+publishedAt: "2025-06-30"
+summary: "A Laravel-based system to automate and streamline the Request for Quotation (RFQ) workflow, enhancing efficiency and transparency in procurement."
+tags: ['PHP', 'Laravel 12', 'SQL Server', 'Web Dev', 'Internet Information Service (IIS)']
+images:
+  - "/images/projects/rfq/foto-1.png"
+team:
+  - name: "Jafar Rahadian"
+    role: "AI/ML Engineer and Full-Stack Web Dev"
+    avatar: "/images/foto.png"
+    linkedIn: "https://www.linkedin.com/in/jafar-rahadian/"
+---
+
+## Overview
+
+The RFQ Automation system is a web-based application developed for PT. Astra Visteon Indonesia to digitalize and streamline the *Request for Quotation* (RFQ) workflow. The primary objective of this project is to enhance efficiency, transparency, and accountability in the procurement process. The application supports the entire workflow—from request submission, purchasing team review, revisions, vendor communication, and negotiation, through to final approval.
+
+## Key Features
+
+This system is equipped with a comprehensive set of features to support the procurement lifecycle:
+
+* **Interactive Dashboard**: Provides real-time statistical summaries of RFQ status for easy monitoring.
+* **Access Control Management**: Two main roles are available—**User** (Requester) and **Admin** (Purchasing Team)—with differentiated permissions to ensure data security and relevance.
+* **End-to-End Workflow**: Covers the complete RFQ lifecycle, including creation, review, revision requests, vendor submission, feedback, negotiation, and closure.
+* **Integrated Communication System**: Facilitates negotiation between Users and Admins through built-in messaging and proposal attachment features.
+* **Advanced Filtering & Search**: Allows users to search and filter RFQ data by status, code, name, or date range.
+* **Repeat Order**: Enables users to create new RFQs based on previously submitted requests, accelerating the process for recurring needs.
+* **Excel Export**: Provides Admins with the ability to export all RFQ data into Excel format for reporting and further analysis.
+
+## Technologies Used
+
+The application is built on a robust architecture with a well-structured database to ensure performance and scalability.
+
+-   **Backend Framework**: Laravel (PHP), featuring core components such as Controllers, Views, and Routes, along with built-in Laravel tables (migrations, sessions, jobs, etc.).
+-   **Database**: SQL Server, with the primary database.
+-   **Database Structure**: A well-normalized design comprising core tables.
+-   **Core Controllers**: Business logic is organized into key controllers, including `RfqManagementController` for Admin actions and `RequestController` for User actions.
+
+## Challenges and Learnings
+
+One of the main challenges was accurately mapping the company's complex, multi-stage approval and revision workflows into a digital format. This required extensive collaboration with the purchasing team to ensure all business rules and edge cases were covered. Another significant challenge was ensuring high user adoption; this was addressed by creating an intuitive user interface and conducting thorough training sessions to smooth the transition from the previous manual system. This project provided deep insights into enterprise-level database management and designing scalable data schemas within the Laravel framework.
+
+## Outcome
+
+The resulting application successfully digitized the entire Request for Quotation lifecycle, significantly reducing manual effort and paperwork. Post-implementation analysis showed a marked reduction in the average RFQ processing time. The system introduced a new level of transparency, allowing stakeholders to monitor quotation statuses in real-time via the interactive dashboard. Ultimately, the project delivered a robust, secure, and scalable platform that met all initial requirements and provided a solid foundation for future enhancements in the procurement process.

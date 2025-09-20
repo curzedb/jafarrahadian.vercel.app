@@ -1,0 +1,27 @@
+.typingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh; 
+  font-size: 2rem;
+  font-family: var(--font-code);
+  color: var(--neutral-on-background-weak);
+}
+
+.cursor {
+  display: inline-block;
+  width: 10px;
+  height: 2rem;
+  background-color: var(--neutral-on-background-weak);
+  margin-left: 8px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to {
+    background-color: transparent;
+  }
+  50% {
+    background-color: var(--neutral-on-background-weak);
+  }
+}

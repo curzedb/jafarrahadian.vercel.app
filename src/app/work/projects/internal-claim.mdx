@@ -1,0 +1,48 @@
+---
+title: "Internal-Claim documentation APP"
+publishedAt: "2025-07-14"
+summary: "A Laravel-based system to automate and streamline the Request for Quotation (RFQ) workflow, enhancing efficiency and transparency in procurement."
+tags: ['PHP', 'Laravel 12', 'SQL Server', 'Web Dev', 'Internet Information Service (IIS)']
+images:
+  - "/images/projects/internal-claim/foto-1.png"
+team:
+  - name: "Jafar Rahadian"
+    role: "AI/ML Engineer and Full-Stack Web Dev"
+    avatar: "/images/foto.png"
+    linkedIn: "https://www.linkedin.com/in/jafar-rahadian/"
+---
+
+## Overview
+
+The Internal Claim Web Application is a comprehensive system designed to digitize and automate the workflow for handling internal production issues at PT. Astra Visteon Indonesia. The primary goal of this project is to enhance response speed, ensure departmental accountability, and provide a centralized data repository for analysis and reporting. By automating this process, the system is targeted to improve overall efficiency by up to 40%.
+
+## Key Features
+
+This system was engineered with a multi-layered workflow and role-based access to manage a complex issue-resolution process:
+
+* **Dynamic Dashboard**: Features a statistical dashboard with interactive charts summarizing pending tasks, problem statuses (Open vs. Close), and issue frequency per product model.
+* **Multi-Level Role Access**: Implements five distinct user roles (**Production, Quality, Engineering, and R&D.** additional is **Admin**), each with specific permissions and dedicated input pages to ensure a structured and secure workflow.
+* **Automated Escalation Workflow**: A sophisticated, multi-phase workflow that starts with an issue report from Production and escalates sequentially through Quality, Engineering, and finally R&D for complex cases.
+* **Integrated Email Notifications**: The system automatically sends email notifications (to both primary recipients and CCs) at each critical step of the workflow, keeping all relevant departments informed.
+* **Draft & Final Submission**: Users in analysis roles (Quality, Engineering, R&D) can save their findings as a draft before final submission, allowing for careful review and preventing premature conclusions.
+* **Centralized Reporting & Data Management**: All findings, analyses, attachments, and final actions are stored in a centralized database, with features to view detailed reports and export data to Excel.
+* **Admin Control Panel**: A dedicated interface for Admins to manage users, roles, and master data like Serial Number references without direct database access.
+
+## Technologies Used
+
+The application is built on the Laravel framework, leveraging a structured MVC (Model-View-Controller) architecture and a relational database.
+
+-   **Backend Framework**: Laravel (PHP), using its core MVC structure and native features.
+-   **Database**: SQL Server.
+-   **Core Models**: The data structure is managed through Eloquent models.
+-   **Role & Permission Management**: Utilizes a robust role-based access control (RBAC) structure.
+-   **Asynchronous Filtering**: The main dashboard table is refreshed via AJAX requests to provide a seamless user experience when filtering data.
+
+## Challenges and Learnings
+
+The most significant challenge was modeling the complex, sequential escalation logic that passed issues between four different departments. Ensuring the state transitions and permissions at each stage were bug-free required meticulous planning and testing. 
+Implementing a robust Role-Based Access Control (RBAC) system for the five distinct user roles was another key difficulty. This project provided invaluable experience in translating complex business workflows into reliable software and managing granular user permissions in a corporate environment.
+
+## Outcome
+
+The resulting web application provides an automated and user-friendly platform for stock analysis. The GRU model achieved a high accuracy with a test MAPE of ~0.99%, demonstrating the system's effectiveness. The project successfully incorporates MLOps principles, creating an efficient, self-updating prediction system that minimizes manual intervention and serves as a strong foundation for future development in financial AI.

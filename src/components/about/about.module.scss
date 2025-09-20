@@ -1,0 +1,45 @@
+@use "../breakpoints.scss" as breakpoints;
+
+.aboutContainer {
+    margin-top: 4rem;
+}
+
+.hover {
+  transition: var(--transition-micro-medium);
+  &:hover {
+    transform: translateX(var(--static-space-4));
+  }
+}
+
+.titleSection {
+  padding-top: var(--static-space-96); 
+  margin-bottom: var(--static-space-32);
+}
+
+.mainTitle {
+  margin-top: var(--static-space-64);
+}
+
+.carouselContainer {
+  width: 75%;
+}
+
+@media (max-width: breakpoints.$s) {
+  .textAlign {
+    text-align: center;
+  }
+  .blockAlign {
+    align-self: center;
+  }
+  
+  .titleSection {
+    padding-top: var(--static-space-64);
+  }
+}
+
+@media (max-width: 768px) {
+  .carouselContainer {
+    width: 100%;
+    padding-left: 0;
+  }
+}

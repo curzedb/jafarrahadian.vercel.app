@@ -1,0 +1,38 @@
+.dropdown {
+  -webkit-appearance: none;
+  appearance: none;
+
+  background-color: hsla(0, 0%, 15%, 0.8);
+  color: hsla(0, 0%, 85%, 0.9);
+  border: 1px solid hsla(0, 0%, 25%, 0.6);
+  padding: 0.5rem 2.5rem 0.5rem 1rem; 
+  border-radius: 16px;
+  font-size: var(--static-font-size-s);
+  cursor: pointer;
+
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23a1a1aa' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+}
+
+[data-theme="light"] .dropdown {
+  background-color: hsla(0, 0%, 95%, 0.8);
+  color: hsla(0, 0%, 15%, 0.9);
+  border: 1px solid hsla(0, 0%, 85%, 0.6);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23333' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+}
+
+:global(.once-dropdown-menu) {
+  background-color: hsla(0, 0%, 15%, 0.95); 
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid hsla(0, 0%, 25%, 0.6);
+  z-index: 100; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] :global(.once-dropdown-menu) {
+  background-color: hsla(0, 0%, 95%, 0.95);
+  border: 1px solid hsla(0, 0%, 85%, 0.6);
+}
