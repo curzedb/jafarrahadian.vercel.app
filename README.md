@@ -7,7 +7,7 @@ Welcome to my personal portfolio repository. This website was built to showcase 
 The live version of this portfolio can be accessed at:
 **[https://jafarrahadian.vercel.app](https://jafarrahadian.vercel.app)**
 
-*(Not Avalaible right now.)*
+*(Avalaible now)*
 
 ## 🛠️ Tech Stack
 
