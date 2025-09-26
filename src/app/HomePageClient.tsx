@@ -83,17 +83,18 @@ export function HomePageClient({ projects }: { projects: any[] }) {
           </RevealFx>
           <RevealFx paddingTop="12" delay={0.4} horizontal="center" paddingLeft="12">
             <Row gap="16" vertical="center">
-              <Button id="about" data-border="rounded" href={about.path} variant="secondary" size="m" weight="default" arrowIcon>
+                <Button id="about" data-border="rounded" href={about.path} variant="secondary" size="m" weight="default" arrowIcon>
                 <Row gap="8" vertical="center" paddingRight="4">
-                  {about.avatar.display && (
+                    {about.avatar.display && (
                     <Avatar marginRight="8" style={{ marginLeft: "-0.75rem" }} src={person.avatar} size="m" />
-                  )}
-                  {about.title}
+                    )}
+                    {about.title}
                 </Row>
-              </Button>
-              <ViewCounter />
+                </Button>
+                <img src="https://hits.sh/jafarrahadian.vercel.app.svg?style=flat&label=Visitors&color=4c1d95" />
+
             </Row>
-          </RevealFx>
+           </RevealFx>
         </Column>
       </Column>
       <RevealFx translateY="16" delay={0.6}>
