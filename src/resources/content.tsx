@@ -110,7 +110,7 @@ const about: About = {
     experiences: [
       {
         company: "PT. Astra Visteon Indonesia",
-        timeframe: "June 2024 - Present",
+        timeframe: "June 2025 - Present",
         role: "Full-Stack Web Dev and AI/ML Engineer Internship",
         achievements: [
           <>Built an automated RFQ email system, boosting operational efficiency by up to 50%.</>,
