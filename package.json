@@ -6,7 +6,7 @@
     "export": "next export",
     "build": "next build",
     "biome-write": "npx @biomejs/biome format --write .",
-    "start": "next start",
+    "start": "next start -p 3003",
     "lint": "next lint"
   },
   "dependencies": {
