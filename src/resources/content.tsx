@@ -72,7 +72,7 @@ const home: Home = {
     href: "/work/spp-app",
   },
   subline: (
-    <>"Leveraging AI and Full-Stack skills to create impactful solutions"</>
+    <>"Innovating with AI and technology for real-world impact."</>
   ),
 };
 
