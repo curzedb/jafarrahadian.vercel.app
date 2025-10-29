@@ -139,13 +139,37 @@ const about: About = {
       },
     ],
   },
-  studies: {
+studies: {
     display: true, 
     title: "Education",
     institutions: [
       {
-        name: "University of Muhammadiyah Prof. Dr. Hamka",
+        name: "University Muhammadiyah Prof. Dr. Hamka",
         description: <>Bachelor Degree in Informatics Engineering, GPA: 3.82/4.00 (September 2020 - December 2024).</>,
+      },
+      {
+        name: "Indosat Ooredoo Hutchison Digital Camp 2024",
+        description: (
+          <>
+            <strong>Machine Learning Engineer - Expert Class</strong> (Sep 2024 - Jul 2025 · 11 mos)
+            <br />
+            Completed intensive training modules on the Dicoding platform (Bootcamp):
+            <ul style={{ paddingLeft: '20px', margin: '8px 0' }}>
+              <li><strong>Getting Started with Python Programming (31 hours):</strong> Python fundamentals, OOP, data manipulation.</li>
+              <li><strong>Learning AI Basics (10 hours):</strong> Core concepts of AI, ML, and Deep Learning.</li>
+              <li><strong>Learning Basic Data Visualization (16 hours):</strong> Data visualization with Google Sheets.</li>
+              <li><strong>Learning Machine Learning for Beginners (75 hours):</strong> Foundational ML models (classification, regression).</li>
+              <li><strong>Learning Deep Learning Fundamentals (90 hours):</strong> Processing text, image, and time-series data.</li>
+              <li><strong>Applied Machine Learning (40 hours):</strong> Real-world case studies (predictive analytics, sentiment analysis).</li>
+              <li><strong>MLOps (80 hours):</strong> Developed end-to-end scalable ML systems using TFX.</li>
+              <li>
+                <strong>Final Project:</strong> <a href="https://github.com/curzedb/mlops-stroke-prediction" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline' }}>
+                  End-to-End MLOps Stroke Prediction
+                </a>
+              </li>
+            </ul>
+          </>
+        ),
       },
     ],
   },
