@@ -39,7 +39,7 @@ The live version of this portfolio can be accessed at:
     npm run dev
     ```
 
-    Open `http://localhost:3000` in your browser to see the result.
+    Open `http://localhost:3003` in your browser to see the result.
 
 ## ✨ Credits and Acknowledgements
 
