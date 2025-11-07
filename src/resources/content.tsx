@@ -113,8 +113,8 @@ const about: About = {
         timeframe: "June 2025 - Present",
         role: "Full-Stack Web Dev and AI/ML Engineer Internship",
         achievements: [
-          <>Built an automated RFQ email system, boosting operational efficiency by up to 50%.</>,
-          <>Developed a web-based workflow system for internal claims, improving process automation by up to 40%.</>,
+          <>Built an automated RFQ email system, boosting operational efficiency by up to 50% (4th Place Quality Control Circle Winner at PT. AVI) .</>,
+          <>Developed a web-based workflow system for internal claims, improving process automation by up to 40% (1st Place Quality Control Circle Winner at PT. AVI).</>,
           <>Created an AI-powered chatbot for document search, accelerating information retrieval by up to 50%.</>,
           <>Engineered a web-based monitoring solution for compressors using ML, reducing production failure risk by up to 5-15%.</>,
           <>Designed and implemented an automated database backup system to ensure data integrity, mitigating the risk of data loss due to human error by up to 80% (use SSMS).</>,
