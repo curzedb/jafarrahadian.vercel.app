@@ -1,11 +1,11 @@
 import { IconType } from "react-icons";
 import { DiMsqlServer } from "react-icons/di";
 
-import{
+import {
   BsFileEarmarkExcelFill,
-  BsFileEarmarkPptFill, 
-  BsMicrosoft, 
-  BsEnvelopeAtFill, 
+  BsFileEarmarkPptFill,
+  BsMicrosoft,
+  BsEnvelopeAtFill,
   BsFileBarGraphFill,
   BsCameraVideoFill,
 } from "react-icons/bs";
@@ -63,9 +63,30 @@ import {
   SiAdobepremierepro,
   SiObsstudio,
   SiCanva,
+  SiSocketdotio,
+  SiStreamlit,
 } from "react-icons/si";
 
-import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, } from "react-icons/fa6";
+import {
+  FaDiscord,
+  FaGithub,
+  FaLinkedin,
+  FaX,
+  FaThreads,
+  FaXTwitter,
+  FaFacebook,
+  FaPinterest,
+  FaWhatsapp,
+  FaReddit,
+  FaTelegram,
+  FaBrain,
+  FaDatabase,
+  FaCode,
+  FaGears,
+  FaNetworkWired,
+  FaMagnifyingGlass,
+  FaServer,
+} from "react-icons/fa6";
 
 export const iconLibrary: Record<string, IconType> = {
   arrowUpRight: HiArrowUpRight,
@@ -132,6 +153,16 @@ export const iconLibrary: Record<string, IconType> = {
   obs: SiObsstudio,
   canva: SiCanva,
   vmix: BsCameraVideoFill,
+  websocket: SiSocketdotio,
+  streamlit: SiStreamlit,
+  "internetinformationservice(iis)": FaServer,
+  laravel12: SiLaravel,
+  rag: FaMagnifyingGlass,
+  llm: FaBrain,
+  vectordatabase: FaDatabase,
+  webdev: FaCode,
+  deeplearning: FaNetworkWired,
+  mlops: FaGears,
 };
 
 export type IconLibrary = typeof iconLibrary;
