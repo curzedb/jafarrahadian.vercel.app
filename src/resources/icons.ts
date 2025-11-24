@@ -62,6 +62,8 @@ import {
   SiAdobeillustrator,
   SiAdobeaudition,
   SiAdobepremierepro,
+  SiAdobeaftereffects,
+  SiAdobelightroomclassic,
   SiObsstudio,
   SiCanva,
   SiSocketdotio,
@@ -167,6 +169,8 @@ export const iconLibrary: Record<string, IconType> = {
   mlops: FaGears,
   RDP: HiComputerDesktop,
   NSSM: FaN,
+  aftereffect: SiAdobeaftereffects,
+  lrc: SiAdobelightroomclassic,
 };
 
 export type IconLibrary = typeof iconLibrary;
