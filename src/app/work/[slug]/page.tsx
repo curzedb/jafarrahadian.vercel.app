@@ -2,13 +2,14 @@ import { notFound } from "next/navigation";
 import { getPosts } from "@/utils/utils";
 import {
   Meta, Schema, Column, Heading, Text, Row, Avatar, Line, Tag,
-  Carousel 
+  Carousel, Flex 
 } from "@once-ui-system/core";
 import { baseURL, person } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
 import { ScrollToHash, CustomMDX } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Metadata } from "next";
+import { iconLibrary } from "@/resources/icons";
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const posts = getPosts(["src", "app", "work", "projects"]);
@@ -78,9 +79,25 @@ export default async function Project({
 
       {post.metadata.tags && post.metadata.tags.length > 0 && (
         <Row gap="8" wrap horizontal="center" marginTop="m" marginBottom="l">
-          {post.metadata.tags.map((tag: string) => (
-            <Tag key={tag} size="l">{tag}</Tag>
-          ))}
+          {post.metadata.tags.map((tag: string) => {
+            const iconKey = tag
+              .toLowerCase()
+              .replace(/\./g, "")
+              .replace(/\s+/g, "")
+              .replace(/-/g, "")
+              // .replace(/\(|\)/g, ""); 
+
+            const IconComponent = iconLibrary[iconKey];
+
+            return (
+              <Tag key={tag} size="l">
+                <Flex gap="8" vertical="center">
+                   {IconComponent && <IconComponent size="14" />}
+                   {tag}
+                </Flex>
+              </Tag>
+            );
+          })}
         </Row>
       )}
 
