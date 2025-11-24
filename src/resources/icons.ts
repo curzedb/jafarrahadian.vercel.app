@@ -22,6 +22,7 @@ import {
   HiOutlineDocument,
   HiOutlineGlobeAsiaAustralia,
   HiOutlineRocketLaunch,
+  HiComputerDesktop,
 } from "react-icons/hi2";
 
 import {
@@ -86,6 +87,7 @@ import {
   FaNetworkWired,
   FaMagnifyingGlass,
   FaServer,
+  FaN,
 } from "react-icons/fa6";
 
 export const iconLibrary: Record<string, IconType> = {
@@ -163,6 +165,8 @@ export const iconLibrary: Record<string, IconType> = {
   webdev: FaCode,
   deeplearning: FaNetworkWired,
   mlops: FaGears,
+  RDP: HiComputerDesktop,
+  NSSM: FaN,
 };
 
 export type IconLibrary = typeof iconLibrary;
