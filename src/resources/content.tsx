@@ -4,7 +4,7 @@ import { Line, Logo, Row, Text } from "@once-ui-system/core";
 interface GalleryImage {
   src: string;
   alt: string;
-  orientation: 'vertical' | 'horizontal'; 
+  orientation: 'vertical' | 'horizontal';
 }
 
 interface Gallery {
@@ -22,8 +22,8 @@ const person: Person = {
   role: " ML/AI Engineer and Full-Stack Web Dev ",
   avatar: "/images/foto.png",
   email: "muhammadjafar954@gmail.com",
-  location: "Asia/Jakarta", 
-  languages: ["English", "Bahasa"], 
+  location: "Asia/Jakarta",
+  languages: ["English", "Bahasa"],
 };
 
 const newsletter: Newsletter = {
@@ -65,7 +65,7 @@ const home: Home = {
         <strong className="ml-4">Featured Project</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
-          Stocks Predict and Analysis APP 
+          Stocks Predict and Analysis APP
         </Text>
       </Row>
     ),
@@ -105,7 +105,7 @@ const about: About = {
     ),
   },
   work: {
-    display: true, 
+    display: true,
     title: "Work Experience",
     experiences: [
       {
@@ -119,14 +119,16 @@ const about: About = {
           <>Engineered a web-based monitoring solution for compressors using ML, reducing production failure risk by up to 5-15%.</>,
           <>Designed and implemented an automated database backup system to ensure data integrity, mitigating the risk of data loss due to human error by up to 80% (use SSMS).</>,
           <>Developed a web-based data management dashboard for monitoring PC resource usage (CPU, GPU, RAM, Disk) using Windows Exporter, Prometheus, and Grafana, reducing application crash risk caused by sudden resource spikes by approximately 25%.</>,
-          <>Managed and maintained 5 Windows Server VMs, handling system configuration, software installation, upgrades, and ensuring high availability for critical applications. Successfully executed a server application migration with Vendor in response to new network segmentation, ensuring minimal downtime and operational continuity.</>
+          <>Managed and maintained 5 Windows Server VMs, handling system configuration, software installation, upgrades, and ensuring high availability for critical applications. Successfully executed a server application migration with Vendor in response to new network segmentation, ensuring minimal downtime and operational continuity.</>,
+          <>Built a comprehensive Internal Control Audit Review web application for managing and tracking audit processes, SOP compliance monitoring, and generating detailed PDF/Excel reports.</>,
+          <>Managed and maintained Scrap Control and Record Delivery applications, implementing feature enhancements, bug fixes, and version upgrades to improve operational efficiency.</>,
         ],
         images: [
-        { src: "/images/projects/avi/rfq.png", alt: "RFQ", width: 16, height: 9 },
-        { src: "/images/projects/avi/aisite.png", alt: "AI-Site", width: 16, height: 9 },
-        { src: "/images/projects/avi/compressor.png", alt: "Compressor-Predictive", width: 16, height: 9 },
-        { src: "/images/projects/avi/internal-claim.png", alt: "Internal-Claim", width: 16, height: 9 },
-      ],
+          { src: "/images/projects/avi/rfq.png", alt: "RFQ", width: 16, height: 9 },
+          { src: "/images/projects/avi/aisite.png", alt: "AI-Site", width: 16, height: 9 },
+          { src: "/images/projects/avi/compressor.png", alt: "Compressor-Predictive", width: 16, height: 9 },
+          { src: "/images/projects/avi/internal-claim.png", alt: "Internal-Claim", width: 16, height: 9 },
+        ],
       },
       {
         company: "BPTI (Badan Pengembangan Teknologi dan Informasi) UHAMKA",
@@ -140,8 +142,8 @@ const about: About = {
       },
     ],
   },
-studies: {
-    display: true, 
+  studies: {
+    display: true,
     title: "Education",
     institutions: [
       {
@@ -182,18 +184,22 @@ studies: {
         title: "Programming Language",
         description: <>Core languages and libraries.</>,
         tags: [
-          { name: "Python",
+          {
+            name: "Python",
             icon: "python",
-           },
-          { name: "PHP",
+          },
+          {
+            name: "PHP",
             icon: "php",
-           },
-          { name: "Typescript",
+          },
+          {
+            name: "Typescript",
             icon: "typescript",
-           },
-          { name: "Javascript",
+          },
+          {
+            name: "Javascript",
             icon: "javascript",
-           },
+          },
         ],
         images: [],
       },
@@ -201,18 +207,22 @@ studies: {
         title: "Framework in Programming Language",
         description: <>Some programming frameworks that I have used.</>,
         tags: [
-          { name: "FastAPI",
+          {
+            name: "FastAPI",
             icon: "fastapi",
-           },
-          { name: "Laravel",
+          },
+          {
+            name: "Laravel",
             icon: "laravel",
-           },
-          { name: "Next.js",
+          },
+          {
+            name: "Next.js",
             icon: "nextjs",
-           },
-          { name: "ReactJS",
+          },
+          {
+            name: "ReactJS",
             icon: "react",
-           },
+          },
         ],
         images: [],
       },
@@ -220,21 +230,26 @@ studies: {
         title: "AI & Data Science",
         description: <>Core languages and libraries for data analysis and machine learning.</>,
         tags: [
-          { name: "TensorFlow",
+          {
+            name: "TensorFlow",
             icon: "tensorflow",
-           },
-          { name: "Py-Torch",
+          },
+          {
+            name: "Py-Torch",
             icon: "pytorch",
-           },
-          { name: "Scikit-learn",
+          },
+          {
+            name: "Scikit-learn",
             icon: "scikitlearn",
-           },
-           { name: "Pandas",
+          },
+          {
+            name: "Pandas",
             icon: "pandas",
-           },
-          { name: "NumPy",
+          },
+          {
+            name: "NumPy",
             icon: "numpy",
-           },
+          },
         ],
         images: [],
       },
@@ -242,15 +257,18 @@ studies: {
         title: "Database",
         description: <>Data management for app.</>,
         tags: [
-          { name: "MySQL",
+          {
+            name: "MySQL",
             icon: "mysql",
-           },
-          { name: "SSMS (SQL Server)",
+          },
+          {
+            name: "SSMS (SQL Server)",
             icon: "sqlserver",
-           },
-          { name: "Postgre SQL",
+          },
+          {
+            name: "Postgre SQL",
             icon: "postgresql",
-           },
+          },
         ],
         images: [],
       },
@@ -258,33 +276,42 @@ studies: {
         title: "CI/CD, Monitoring, and Testing Software",
         description: <>Proficiency in various software for data tracking, monitoring, and app development service.</>,
         tags: [
-          { name: "Prometheus",
+          {
+            name: "Prometheus",
             icon: "prometheus",
-           },
-          { name: "Grafana",
+          },
+          {
+            name: "Grafana",
             icon: "grafana",
-           },
-          { name: "NSSM", 
+          },
+          {
+            name: "NSSM",
             icon: "NSSM",
           },
-          { name: "Redis",
+          {
+            name: "Redis",
             icon: "redis",
-           },
-          { name: "Celery Worker",
+          },
+          {
+            name: "Celery Worker",
             icon: "celery",
-           },
-          { name: "Postman",
+          },
+          {
+            name: "Postman",
             icon: "postman",
-           },
-          { name: "RDP", 
+          },
+          {
+            name: "RDP",
             icon: "RDP",
           },
-          { name: "Docker",
+          {
+            name: "Docker",
             icon: "docker",
-           },
-          { name: "Git",
+          },
+          {
+            name: "Git",
             icon: "git",
-           },
+          },
         ],
         images: [],
       },
@@ -292,21 +319,26 @@ studies: {
         title: "Office Software",
         description: <>Proficiency in various Office software for data visualization and office workload.</>,
         tags: [
-          { name: "MS. Power BI",
+          {
+            name: "MS. Power BI",
             icon: "powerbi",
-           },
-          { name: "MS. Office",
+          },
+          {
+            name: "MS. Office",
             icon: "office",
-           },
-          { name: "MS. Excel",
+          },
+          {
+            name: "MS. Excel",
             icon: "excel",
-           },
-          { name: "MS. Power Point",
+          },
+          {
+            name: "MS. Power Point",
             icon: "powerpoint"
-           },
-          { name: "Outlook",
+          },
+          {
+            name: "Outlook",
             icon: "outlook",
-           },
+          },
         ],
         images: [],
       },
@@ -314,33 +346,42 @@ studies: {
         title: "Multimedia Software",
         description: <>Proficiency in various software for Graphic editing and video production.</>,
         tags: [
-          { name: "Adobe Photoshop",
+          {
+            name: "Adobe Photoshop",
             icon: "photoshop",
-           },
-          { name: "Adobe Illustrator",
+          },
+          {
+            name: "Adobe Illustrator",
             icon: "illustrator",
-           },
-          { name: "Adobe Audition",
+          },
+          {
+            name: "Adobe Audition",
             icon: "audition",
-           },
-          { name: "Adobe Premiere Pro",
+          },
+          {
+            name: "Adobe Premiere Pro",
             icon: "premiere",
-           },
-           { name: "Adobe After Effect",
+          },
+          {
+            name: "Adobe After Effect",
             icon: "aftereffect",
-           },
-           { name: "Adobe Lightroom Classic",
+          },
+          {
+            name: "Adobe Lightroom Classic",
             icon: "lrc",
-           },
-          { name: "OBS Studio",
+          },
+          {
+            name: "OBS Studio",
             icon: "obs",
-           },
-          { name: "V-Mix",
+          },
+          {
+            name: "V-Mix",
             icon: "vmix",
-           },
-          { name: "Canva",
+          },
+          {
+            name: "Canva",
             icon: "canva",
-           },
+          },
         ],
         images: [],
       },
