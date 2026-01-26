@@ -1,4 +1,4 @@
-import { About, Blog, Home, Newsletter, Person, Social, Work } from "@/types";
+import { About, Blog, Certificates, Home, Newsletter, Person, Social, Work } from "@/types";
 import { Line, Logo, Row, Text } from "@once-ui-system/core";
 
 interface GalleryImage {
@@ -407,6 +407,99 @@ const work: Work = {
   // All projects will be listed on the /home and /work routes
 };
 
+const certificates: Certificates = {
+  path: "/certificates",
+  label: "Certificates",
+  title: `Certifications – ${person.name}`,
+  description: `Professional certifications and credentials earned by ${person.name}`,
+  items: [
+    {
+      name: "Machine Learning with TensorFlow",
+      issuer: "Dev.id",
+      date: "2024",
+      link: "https://dev.id/certificate/verify/L8W5O820RO",
+      skills: ["TensorFlow", "Machine Learning", "Deep Learning"],
+    },
+    {
+      name: "Machine Learning Operations (MLOps)",
+      issuer: "Dicoding Indonesia",
+      date: "2024",
+      link: "https://www.dicoding.com/certificates/KEXL753EWXG2",
+      skills: ["MLOps", "TFX", "CI/CD", "Model Deployment"],
+    },
+    {
+      name: "AI Praktis untuk Produktivitas",
+      issuer: "Dicoding Indonesia",
+      date: "2024",
+      link: "https://www.dicoding.com/certificates/EYX4GW8M6ZDL",
+      skills: ["AI", "Productivity", "Generative AI"],
+    },
+    {
+      name: "Machine Learning Terapan",
+      issuer: "Dicoding Indonesia",
+      date: "2024",
+      link: "https://www.dicoding.com/certificates/ERZREOVMQXYV",
+      skills: ["Applied ML", "Data Science", "Python"],
+    },
+    {
+      name: "Belajar Penggunaan Generative AI",
+      issuer: "Dicoding Indonesia",
+      date: "2024",
+      link: "https://www.dicoding.com/certificates/0LZ0RV823P65",
+      skills: ["Generative AI", "LLM", "Prompt Engineering"],
+    },
+    {
+      name: "Belajar Fundamental Deep Learning",
+      issuer: "Dicoding Indonesia",
+      date: "2024",
+      link: "https://www.dicoding.com/certificates/07Z63G88MZQR",
+      skills: ["Deep Learning", "Neural Networks", "TensorFlow"],
+    },
+    {
+      name: "Belajar Dasar AI",
+      issuer: "Dicoding Indonesia",
+      date: "2024",
+      link: "https://www.dicoding.com/certificates/6RPNY88JRZ2M",
+      skills: ["AI Fundamentals", "Machine Learning Basics"],
+    },
+    {
+      name: "Belajar Dasar Visualisasi Data",
+      issuer: "Dicoding Indonesia",
+      date: "2024",
+      link: "https://www.dicoding.com/certificates/JLX17NO7JX72",
+      skills: ["Data Visualization", "Google Sheets", "Charts"],
+    },
+    {
+      name: "Belajar Machine Learning untuk Pemula",
+      issuer: "Dicoding Indonesia",
+      date: "2024",
+      link: "https://www.dicoding.com/certificates/KEXLY37OMZG2",
+      skills: ["Machine Learning", "Scikit-learn", "Classification"],
+    },
+    {
+      name: "Memulai Pemrograman dengan Python",
+      issuer: "Dicoding Indonesia",
+      date: "2024",
+      link: "https://www.dicoding.com/certificates/98XW56L4JPM3",
+      skills: ["Python", "OOP", "Data Structures"],
+    },
+    {
+      name: "TOEFL-ITP",
+      issuer: "CLIent(Centre of Language Improvement)",
+      date: "2024",
+      link: "https://www.e-ujian.com/cert/15ezRF.173172",
+      skills: ["English Proficiency", "Academic English"],
+    },
+    {
+      name: "Microsoft Office Specialist: Microsoft Excel 2016",
+      issuer: "Microsoft / Certiport",
+      date: "2023",
+      link: "https://www.certiport.com/portal/Pages/PrintTranscriptInfo.aspx?action=Cert&format=pdf&id=251",
+      skills: ["Microsoft Excel", "Data Analysis", "Spreadsheets"],
+    },
+  ],
+};
+
 const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
@@ -417,4 +510,5 @@ const gallery: Gallery = {
   images: [],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, home, about, blog, work, certificates, gallery };
+

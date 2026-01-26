@@ -26,6 +26,7 @@ export function Projects({ projects }: ProjectsProps) {
           avatars={post.metadata.team?.map((member: any) => ({ src: member.avatar })) || []}
           link={post.metadata.link || ""}
           tags={post.metadata.tags}
+          impact={post.metadata.impact}
         />
       ))}
     </Column>
