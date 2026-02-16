@@ -13,24 +13,134 @@ import {
   Schema,
   Row,
 } from "@once-ui-system/core";
-import { baseURL, about, person, social } from "@/resources";
+import { baseURL, about as aboutBase, person, social } from "@/resources";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
 import { getServerDictionary } from "@/i18n/server";
 
 export async function generateMetadata() {
+  const { locale } = await getServerDictionary();
+  const aboutTitle = locale === "id" ? `Tentang – ${person.name}` : aboutBase.title;
+  const aboutDescription =
+    locale === "id"
+      ? `Kenali ${person.name}, Engineer ML/AI dan Full-Stack Web Developer dari ${person.location}`
+      : aboutBase.description;
+
   return Meta.generate({
-    title: about.title,
-    description: about.description,
+    title: aboutTitle,
+    description: aboutDescription,
     baseURL: baseURL,
-    image: `/api/og/generate?title=${encodeURIComponent(about.title)}`,
-    path: about.path,
+    image: `/api/og/generate?title=${encodeURIComponent(aboutTitle)}`,
+    path: aboutBase.path,
   });
 }
 
 export default async function About() {
-  const { t } = await getServerDictionary();
+  const { t, locale } = await getServerDictionary();
+  const isIndonesian = locale === "id";
+
+  const localizedRole = isIndonesian
+    ? "Engineer ML/AI dan Full-Stack Web Developer"
+    : person.role;
+  const localizedLanguages = isIndonesian
+    ? ["Inggris", "Bahasa Indonesia"]
+    : person.languages;
+
+  const about = isIndonesian
+    ? {
+        ...aboutBase,
+        title: `Tentang – ${person.name}`,
+        description: `Kenali ${person.name}, ${localizedRole} dari ${person.location}`,
+        intro: {
+          ...aboutBase.intro,
+          title: "Perkenalan",
+          description: (
+            <>
+              Lulusan Teknik Informatika dengan keahlian kuat di bidang Machine Learning dan Full-Stack Web Development.
+              Berpengalaman mengembangkan solusi berbasis AI, alur analisis data, serta aplikasi web end-to-end.
+              Menguasai Python (TensorFlow, Scikit-learn, Pandas, NumPy), basis data SQL (MySQL, PostgreSQL, SQL Server, SQLite),
+              pengembangan Web App (Next.JS, Laravel, Tailwind, Material UI, dan Once UI), serta containerization dengan Docker.
+              Cepat belajar, berorientasi inovasi, dan berkomitmen memanfaatkan teknologi untuk solusi yang berdampak.
+            </>
+          ),
+        },
+        work: {
+          ...aboutBase.work,
+          title: "Pengalaman Kerja",
+        },
+        studies: {
+          ...aboutBase.studies,
+          title: "Pendidikan",
+          institutions: aboutBase.studies.institutions.map((institution) => {
+            if (institution.name === "University Muhammadiyah Prof. Dr. Hamka") {
+              return {
+                ...institution,
+                description: <>Sarjana Teknik Informatika, IPK: 3.82/4.00 (September 2020 - Desember 2024).</>,
+              };
+            }
+
+            if (institution.name === "Indosat Ooredoo Hutchison Digital Camp 2024") {
+              return {
+                ...institution,
+                description: (
+                  <>
+                    <strong>Machine Learning Engineer - Kelas Expert</strong> (Sep 2024 - Jul 2025 · 11 bln)
+                    <br />
+                    Menyelesaikan modul pelatihan intensif pada platform Dicoding (Bootcamp):
+                    <ul style={{ paddingLeft: "20px", margin: "8px 0" }}>
+                      <li><strong>Memulai Pemrograman dengan Python (31 jam):</strong> Fundamental Python, OOP, manipulasi data.</li>
+                      <li><strong>Belajar Dasar AI (10 jam):</strong> Konsep inti AI, ML, dan Deep Learning.</li>
+                      <li><strong>Belajar Dasar Visualisasi Data (16 jam):</strong> Visualisasi data menggunakan Google Sheets.</li>
+                      <li><strong>Belajar Machine Learning untuk Pemula (75 jam):</strong> Model ML dasar (klasifikasi, regresi).</li>
+                      <li><strong>Belajar Fundamental Deep Learning (90 jam):</strong> Pengolahan data teks, gambar, dan time-series.</li>
+                      <li><strong>Machine Learning Terapan (40 jam):</strong> Studi kasus dunia nyata (predictive analytics, sentiment analysis).</li>
+                      <li><strong>MLOps (80 jam):</strong> Mengembangkan sistem ML end-to-end yang scalable menggunakan TFX.</li>
+                      <li>
+                        <strong>Proyek Akhir:</strong>{" "}
+                        <a href="https://github.com/curzedb/mlops-stroke-prediction" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}>
+                          End-to-End MLOps Stroke Prediction
+                        </a>
+                      </li>
+                    </ul>
+                  </>
+                ),
+              };
+            }
+
+            return institution;
+          }),
+        },
+        technical: {
+          ...aboutBase.technical,
+          title: "Keahlian Teknis",
+          skills: aboutBase.technical.skills.map((skill) => {
+            if (skill.title === "Programming Language") {
+              return { ...skill, title: "Bahasa Pemrograman", description: <>Bahasa dan library inti.</> };
+            }
+            if (skill.title === "Framework in Programming Language") {
+              return { ...skill, title: "Framework Pemrograman", description: <>Framework pemrograman yang pernah saya gunakan.</> };
+            }
+            if (skill.title === "AI & Data Science") {
+              return { ...skill, title: "AI & Sains Data", description: <>Bahasa dan library inti untuk analisis data serta machine learning.</> };
+            }
+            if (skill.title === "Database") {
+              return { ...skill, title: "Basis Data", description: <>Manajemen data untuk aplikasi.</> };
+            }
+            if (skill.title === "CI/CD, Monitoring, and Testing Software") {
+              return { ...skill, title: "CI/CD, Monitoring, dan Software Testing", description: <>Kemampuan menggunakan berbagai software untuk tracking data, monitoring, dan layanan pengembangan aplikasi.</> };
+            }
+            if (skill.title === "Office Software") {
+              return { ...skill, title: "Perangkat Lunak Perkantoran", description: <>Kemampuan menggunakan berbagai software perkantoran untuk visualisasi data dan pekerjaan operasional.</> };
+            }
+            if (skill.title === "Multimedia Software") {
+              return { ...skill, title: "Perangkat Lunak Multimedia", description: <>Kemampuan menggunakan berbagai software untuk editing grafis dan produksi video.</> };
+            }
+            return skill;
+          }),
+        },
+      }
+    : aboutBase;
 
   const structure = [
     {
@@ -102,10 +212,10 @@ export default async function About() {
               <Icon onBackground="accent-weak" name="globe" />
               {person.location}
             </Row>
-            {person.languages && person.languages.length > 0 && (
+            {localizedLanguages && localizedLanguages.length > 0 && (
               <Row wrap gap="8">
-                {person.languages.map((language, index) => (
-                  <Tag key={index} size="l">
+                {localizedLanguages.map((language) => (
+                  <Tag key={language} size="l">
                     {language}
                   </Tag>
                 ))}
@@ -164,7 +274,7 @@ export default async function About() {
               variant="display-default-xs"
               onBackground="neutral-weak"
             >
-              {person.role}
+              {localizedRole}
             </Text>
             {social.length > 0 && (
               <Row
@@ -296,8 +406,8 @@ export default async function About() {
                 {about.technical.title}
               </Heading>
               <Column fillWidth gap="l">
-                {about.technical.skills.map((skill, index) => (
-                  <Column key={`${skill}-${index}`} fillWidth gap="4">
+                {about.technical.skills.map((skill) => (
+                  <Column key={skill.title} fillWidth gap="4">
                     <Text id={skill.title} variant="heading-strong-l">
                       {skill.title}
                     </Text>
@@ -315,9 +425,9 @@ export default async function About() {
                     )}
                     {skill.images && skill.images.length > 0 && (
                       <Row fillWidth paddingTop="m" gap="12" wrap>
-                        {skill.images.map((image, index) => (
+                        {skill.images.map((image) => (
                           <Row
-                            key={index}
+                            key={`${image.src}-${image.alt}`}
                             border="neutral-medium"
                             radius="m"
                             minWidth={image.width}

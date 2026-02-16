@@ -39,7 +39,7 @@ const CertificateCard: React.FC<CertificateCardProps> = ({
     return (
         <RevealFx translateY="8" delay={0.1 * index} fillWidth>
             <div className={styles.certificateCard}>
-                <Column gap="16" fillWidth>
+                <Column gap="16" fillWidth style={{ height: "100%" }}>
                     {/* Header with icon */}
                     <Row gap="12" vertical="start">
                         <div className={styles.iconWrapper}>
@@ -69,8 +69,8 @@ const CertificateCard: React.FC<CertificateCardProps> = ({
                     {/* Skills */}
                     {skills && skills.length > 0 && (
                         <Row gap="8" wrap>
-                            {skills.map((skill, i) => (
-                                <Tag key={i} size="s" className={styles.skillTag}>
+                            {skills.map((skill) => (
+                                <Tag key={skill} size="s" className={styles.skillTag}>
                                     {skill}
                                 </Tag>
                             ))}
@@ -79,16 +79,18 @@ const CertificateCard: React.FC<CertificateCardProps> = ({
 
                     {/* View Certificate Link */}
                     {link && (
-                        <SmartLink
-                            href={link}
-                            className={styles.viewLink}
-                            suffixIcon="arrowUpRightFromSquare"
-                        >
-                            <Row gap="8" vertical="center">
-                                <ExternalLink size={14} />
-                                <Text variant="label-default-s">{viewCertificateLabel}</Text>
-                            </Row>
-                        </SmartLink>
+                        <Row style={{ marginTop: "auto" }}>
+                            <SmartLink
+                                href={link}
+                                className={styles.viewLink}
+                                suffixIcon="arrowUpRightFromSquare"
+                            >
+                                <Row gap="8" vertical="center">
+                                    <ExternalLink size={14} />
+                                    <Text variant="label-default-s">{viewCertificateLabel}</Text>
+                                </Row>
+                            </SmartLink>
+                        </Row>
                     )}
                 </Column>
             </div>

@@ -1,15 +1,18 @@
 .certificatesGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-auto-rows: 1fr;
   gap: var(--static-space-24);
   width: 100%;
 }
 
 .certificateCard {
+  display: flex;
   background: var(--surface-background);
   border: 1px solid var(--neutral-border-medium);
   border-radius: var(--radius-l);
   padding: var(--static-space-24);
+  height: 100%;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;

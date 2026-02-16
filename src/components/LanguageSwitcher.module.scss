@@ -1,8 +1,14 @@
+@use "./breakpoints.scss" as breakpoints;
+
 .floatingWrapper {
   position: fixed;
-  top: 1rem;
+  top: calc(4.5rem + env(safe-area-inset-top, 0px));
   right: 1rem;
-  z-index: 1200;
+  z-index: 40;
+
+  @media (max-width: breakpoints.$s) {
+    top: calc(1rem + env(safe-area-inset-top, 0px));
+  }
 }
 
 .langButton {

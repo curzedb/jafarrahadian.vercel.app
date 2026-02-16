@@ -10,20 +10,27 @@ export const TypingAnimation = () => {
   const fullText = locale === 'id' ? 'Segera Hadir...' : 'Available Soon...';
 
   useEffect(() => {
-    const textChars = Array.from(fullText);
     let index = 0;
-    setText(''); 
+    let timeoutId: ReturnType<typeof setTimeout> | undefined;
+    let isActive = true;
 
-    const intervalId = setInterval(() => {
-      if (index < textChars.length) {
-        setText((prev) => prev + textChars[index]);
-        index++;
-      } else {
-        clearInterval(intervalId);
-      }
-    }, 200); 
+    setText('');
 
-    return () => clearInterval(intervalId);
+    const typeNext = () => {
+      if (!isActive) return;
+      if (index >= fullText.length) return;
+
+      index += 1;
+      setText(fullText.slice(0, index));
+      timeoutId = setTimeout(typeNext, 200);
+    };
+
+    timeoutId = setTimeout(typeNext, 200);
+
+    return () => {
+      isActive = false;
+      if (timeoutId) clearTimeout(timeoutId);
+    };
   }, [fullText]);
 
   return (
