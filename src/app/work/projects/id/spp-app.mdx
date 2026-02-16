@@ -1,0 +1,52 @@
+---
+title: "Aplikasi Prediksi dan Analisis Harga Saham"
+publishedAt: "2025-05-05"
+summary: "Implementasi LSTM, GRU, dan 1D CNN pada data saham/kripto untuk prediksi harga dengan otomasi retraining mingguan."
+tags: ['Python', 'Streamlit', 'Deep Learning', 'MLOps']
+images:
+  - "/images/projects/spp-app/foto-1.png"
+  - "/images/projects/spp-app/foto-2.png"
+  - "/images/projects/spp-app/foto-3.png"
+  - "/images/projects/spp-app/foto-4.png"
+link: "https://prediksisahamjafarrahadian.streamlit.app"
+github: "https://github.com/curzedb/prediksisaham_jafarrahadian"
+impact:
+  - "~0.90% MAPE Accuracy"
+  - "Weekly Auto-Retrain"
+team:
+  - name: "Jafar Rahadian"
+    role: "AI/ML Engineer and Full-Stack Web Dev"
+    avatar: "/images/foto.png"
+    linkedIn: "https://www.linkedin.com/in/jafar-rahadian/"
+---
+
+## Gambaran Umum
+
+Proyek ini dikembangkan untuk membantu analisis pasar dan prediksi harga penutupan saham secara lebih sistematis. Sistem mendukung beberapa ticker dan menguji tiga model neural network sekaligus, dengan praktik MLOps untuk otomatisasi.
+
+## Fitur Utama
+
+- Ingest data dinamis dari `yfinance` + cache SQLite.
+- EDA interaktif berbasis Streamlit.
+- Perbandingan model LSTM, CNN, dan GRU.
+- Hyperparameter tuning otomatis dengan KerasTuner.
+- Evaluasi metrik RMSE, MAPE, dan R².
+- Retraining otomatis mingguan via GitHub Actions.
+- Prediksi hingga 7 hari ke depan.
+
+## Teknologi
+
+Python, Streamlit, TensorFlow/Keras, KerasTuner, Pandas, NumPy, SQLite, yfinance, dan GitHub Actions.
+
+## Tantangan & Pembelajaran
+
+Tantangan terbesar adalah konsistensi data API, tuning model multi-arsitektur, dan orkestrasi retraining otomatis. Proyek ini memperkuat pemahaman mengenai bridging model development ke deployment workflow.
+
+## Hasil
+
+Aplikasi berhasil memberikan platform prediksi yang otomatis dan user-friendly. Model GRU mencapai performa tinggi dengan MAPE sekitar 0.99%, serta fondasi MLOps untuk update model berkala.
+
+## Links
+
+* **[🔗 Live Demo on Streamlit](https://prediksisahamjafarrahadian.streamlit.app)**
+* **[📂 Source Code on GitHub](https://github.com/curzedb/prediksisaham_jafarrahadian)**

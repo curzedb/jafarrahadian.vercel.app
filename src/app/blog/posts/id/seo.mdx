@@ -1,0 +1,31 @@
+---
+title: "Pengaturan SEO untuk Magic Portfolio"
+summary: "Kelola metadata dan social preview Magic Portfolio."
+publishedAt: "2025-04-14"
+tag: "Magic Portfolio"
+---
+
+## Meta Tag
+
+Magic Portfolio otomatis menghasilkan meta tag dan open graph berdasarkan konten halaman.
+
+## Schema
+
+Schema markup juga dihasilkan otomatis dari data konten.
+
+## Open Graph Image
+
+Gambar share (open graph dan twitter) di-generate otomatis menggunakan `next/og`.
+
+Pastikan file konten sudah diperbarui dengan informasi milikmu, termasuk `baseURL` pada file konfigurasi.
+
+```tsx
+export async function generateMetadata() {
+  const title = home.title;
+  const description = home.description;
+  const ogImage = `https://\/api/og/generate?title=${encodeURIComponent(title)}`;
+  ...
+}
+```
+
+Jika ingin gambar statis, ganti `ogImage` dengan path gambar dari folder `public`.

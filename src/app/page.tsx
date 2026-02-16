@@ -1,7 +1,8 @@
-import { getPosts } from "@/utils/utils";
+import { getLocalizedPosts } from "@/utils/utils";
 import { Meta } from "@once-ui-system/core";
 import { home, baseURL } from "@/resources";
 import { HomePageClient } from "./HomePageClient"; 
+import { getServerLocale } from "@/i18n/server";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -13,10 +14,11 @@ export async function generateMetadata() {
   });
 }
 
-export default function Home() {
-  const allProjects = getPosts(["src", "app", "work", "projects"]);
+export default async function Home() {
+  const locale = await getServerLocale();
+  const localizedProjects = getLocalizedPosts(["src", "app", "work", "projects"], locale);
 
   return (
-    <HomePageClient projects={allProjects} />
+    <HomePageClient projects={localizedProjects} initialLocale={locale} />
   );
 }

@@ -1,0 +1,41 @@
+---
+title: "Sistem Predictive Monitoring Kompresor Industri (Atlas Copco)"
+publishedAt: "2025-09-15"
+summary: "Aplikasi web untuk monitoring sensor real-time, deteksi anomali, dan prediksi nilai sensor menggunakan model ML khusus."
+tags: ['Python', 'FastAPI', 'Next.js', 'Pytorch', 'WebSocket']
+images:
+  - "/images/projects/atlascopco-predictive/foto-1.png"
+impact:
+  - "5-15% Penurunan Risiko"
+  - "Monitoring Real-time"
+team:
+  - name: "Jafar Rahadian"
+    role: "AI/ML Engineer and Full-Stack Web Dev"
+    avatar: "/images/foto.png"
+    linkedIn: "https://www.linkedin.com/in/jafar-rahadian/"
+---
+
+## Gambaran Umum
+
+Project ini adalah sistem web untuk memantau data sensor kompresor Atlas Copco secara real-time. Sistem menggabungkan dua kemampuan utama: **forecasting** untuk memprediksi nilai sensor ke depan dan **anomaly detection** untuk mendeteksi pola operasi yang tidak normal.
+
+## Strategi Machine Learning
+
+- **Forecasting Time-Series** menggunakan LightGBM, dengan pendekatan berbeda untuk data normal, data kumulatif, dan data imbalance.
+- **Anomaly Detection** memakai:
+  - **LSTM Autoencoder (PyTorch)** untuk data univariat time-series.
+  - **Isolation Forest** untuk data multivariat.
+
+## Arsitektur Sistem
+
+- **Frontend**: Next.js + ReactECharts, real-time via HTTP/WebSocket.
+- **Backend Service**: FastAPI untuk data sensor dan inferensi anomali.
+- **Prediction Service**: FastAPI terpisah untuk training model on-demand + stream log via WebSocket.
+
+## Tantangan & Pembelajaran
+
+Tantangan terberat adalah membuat pipeline ML yang fleksibel per karakteristik sensor. Memisahkan prediction service dari aplikasi utama juga krusial agar UI tetap responsif saat training model yang berat.
+
+## Hasil
+
+Sistem ini mendukung maintenance proaktif dengan early warning berbasis data. Arsitektur terpisah membuat pengalaman pengguna tetap smooth dan menjadi fondasi kuat untuk pengembangan IoT analytics lanjutan.

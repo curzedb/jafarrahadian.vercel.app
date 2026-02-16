@@ -1,5 +1,5 @@
-import fs from "fs";
-import path from "path";
+import fs from "node:fs";
+import path from "node:path";
 import matter from "gray-matter";
 
 type Team = {
@@ -68,5 +68,21 @@ function getMDXData(dir: string) {
 
 export function getPosts(customPath = ["", "", "", ""]) {
   const postsDir = path.join(process.cwd(), ...customPath);
+  return getMDXData(postsDir);
+}
+
+export function getLocalizedPosts(
+  customPath = ["", "", "", ""],
+  locale?: string,
+) {
+  const postsDir = path.join(process.cwd(), ...customPath);
+
+  if (locale) {
+    const localizedDir = path.join(postsDir, locale);
+    if (fs.existsSync(localizedDir)) {
+      return getMDXData(localizedDir);
+    }
+  }
+
   return getMDXData(postsDir);
 }

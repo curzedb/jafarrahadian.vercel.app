@@ -14,6 +14,7 @@ import {
 
 import { iconLibrary } from "@/resources/icons";
 import styles from "./ProjectCard.module.scss";
+import { useLocale } from "@/i18n/client";
 
 interface ProjectCardProps {
   href: string;
@@ -39,6 +40,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   tags,
   impact,
 }) => {
+  const { t } = useLocale();
+
   return (
     <div className={styles.projectCard}>
       <Column fillWidth gap="m">
@@ -83,8 +86,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               {/* Impact Metrics Badges */}
               {impact && impact.length > 0 && (
                 <Row gap="8" wrap marginTop="s">
-                  {impact.map((metric, i) => (
-                    <span key={i} className={styles.impactBadge}>
+                  {impact.map((metric) => (
+                    <span key={metric} className={styles.impactBadge}>
                       {metric}
                     </span>
                   ))}
@@ -122,8 +125,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                     className={styles.linkButton}
                     href={href}
                   >
-                    <Text variant="body-default-s">Read case study</Text>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <Text variant="body-default-s">{t.work.readCaseStudy}</Text>
+                    <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
                   </SmartLink>
@@ -133,8 +136,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                     className={`${styles.linkButton} ${styles.demoButton}`}
                     href={link}
                   >
-                    <Text variant="body-default-s">View project</Text>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <Text variant="body-default-s">{t.work.viewProject}</Text>
+                    <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
                     </svg>
                   </SmartLink>

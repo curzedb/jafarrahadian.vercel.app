@@ -1,9 +1,13 @@
+"use client";
+
 import { Row, IconButton, SmartLink, Text } from "@once-ui-system/core";
 import { person, social } from "@/resources";
 import styles from "./Footer.module.scss";
+import { useLocale } from "@/i18n/client";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useLocale();
 
   return (
     <Row as="footer" fillWidth padding="8" horizontal="center" s={{ direction: "column" }}>
@@ -26,7 +30,7 @@ export const Footer = () => {
           <Text paddingX="4">{person.name}</Text>
           <Text onBackground="neutral-weak">
             {/* Usage of this template requires attribution. Please don't remove the link to Once UI unless you have a Pro license. */}
-            / This website using material from {" "}
+            / {t.footer.attributionPrefix}{" "}
             <SmartLink href="https://once-ui.com/products/magic-portfolio">Once UI</SmartLink>
           </Text>
         </Text>

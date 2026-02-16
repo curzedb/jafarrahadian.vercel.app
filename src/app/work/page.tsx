@@ -1,9 +1,8 @@
-import { getPosts } from "@/utils/utils";
+import { getLocalizedPosts } from "@/utils/utils";
 import { Column, Meta, Schema } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
 import { WorkPageClient } from "./WorkPageClient";
-
-const allProjects = getPosts(["src", "app", "work", "projects"]);
+import { getServerLocale } from "@/i18n/server";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -15,8 +14,9 @@ export async function generateMetadata() {
   });
 }
 
-export default function Work() {
-  const allProjects = getPosts(["src", "app", "work", "projects"]);
+export default async function Work() {
+  const locale = await getServerLocale();
+  const allProjects = getLocalizedPosts(["src", "app", "work", "projects"], locale);
 
   return (
     <Column maxWidth="m" paddingTop="24" horizontal="center">
@@ -33,7 +33,7 @@ export default function Work() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <WorkPageClient initialProjects={allProjects} />
+      <WorkPageClient initialProjects={allProjects} initialLocale={locale} />
     </Column>
   );
 }

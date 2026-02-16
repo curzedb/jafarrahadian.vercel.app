@@ -1,0 +1,61 @@
+---
+title: "Stock Analist - AI Stock Analysis & Prediction"
+publishedAt: "2026-02-10"
+summary: "Built an AI-powered stock analysis platform with Django, FastAPI, Celery, and Deep Learning models (LSTM, GRU, CNN), including monitoring, backtesting, transfer learning, and XAI modules."
+tags: ['Python', 'Django', 'FastAPI', 'Celery', 'TensorFlow', 'MLOps']
+images:
+  - "/images/projects/stock-analist/Foto1.png"
+  - "/images/projects/stock-analist/Foto2.png"
+  - "/images/projects/stock-analist/Foto3.png"
+  - "/images/projects/stock-analist/Foto4.png"
+  - "/images/projects/stock-analist/Foto5.png"
+link: "https://github.com/curzedb/stock-analist"
+github: "https://github.com/curzedb/stock-analist"
+impact:
+  - "Multi-Model Forecasting System"
+  - "Monitoring, Backtesting, and XAI"
+team:
+  - name: "Jafar Rahadian"
+    role: "AI/ML Engineer and Full-Stack Web Dev"
+    avatar: "/images/foto.png"
+    linkedIn: "https://www.linkedin.com/in/jafar-rahadian/"
+---
+
+## Overview
+
+Stock Analist is an AI-based stock analysis and prediction platform designed to help users train, evaluate, and monitor forecasting models in one integrated web application.
+The system uses a microservices approach by separating the main web interface (Django) and data-processing service (FastAPI), then orchestrates asynchronous training workflows with Celery and Redis.
+
+## Key Features
+
+* **Microservices Architecture**: Django as the primary app, FastAPI for stock data processing and service separation.
+* **Multi-Model Deep Learning**: Supports LSTM, GRU, and CNN training pipelines for price prediction.
+* **Real-Time Training Monitoring**: Tracks training progress and model status live during long-running jobs.
+* **Technical Indicators Pipeline**: Automatically computes indicators such as RSI, MACD, Bollinger Bands, and Moving Averages.
+* **Model Performance Dashboard**: Displays RMSE, MAPE, and R² metrics for monitoring and comparison.
+* **Backtesting Module**: Evaluates model behavior on historical data using strategy metrics.
+* **Transfer Learning Module**: Reuses pretrained model knowledge for faster adaptation to other tickers.
+* **Explainable AI (XAI)**: Provides feature importance and model interpretability for prediction analysis.
+
+## Technologies Used
+
+-   **Python 3.10+**: Core language for backend and ML pipeline.
+-   **Django 4.x**: Main web application and dashboard interface.
+-   **FastAPI**: Data ingestion/processing microservice.
+-   **Celery + Redis**: Background task queue for model training jobs.
+-   **TensorFlow/Keras & Scikit-Learn**: Deep Learning model development and evaluation.
+-   **SQLite / PostgreSQL**: Data persistence for model metadata and historical records.
+-   **Docker & Docker Compose**: Containerized development and deployment setup.
+
+## Challenges and Learnings
+
+The main challenge was coordinating asynchronous ML training with web-level responsiveness, especially for long training sessions and multi-model experiments. I also learned how to structure reusable services and repositories so model lifecycle operations (train, monitor, evaluate, explain) stay maintainable as features grow. Adding monitoring, backtesting, and explainability modules strengthened my practical understanding of end-to-end MLOps-oriented system design.
+
+## Outcome
+
+The project evolved from a basic stock prediction app into a richer ML platform with production-style architecture and advanced analytics modules. It now supports a full workflow from training and forecasting to model interpretation and performance monitoring, making it a strong foundation for iterative financial AI development.
+
+## Links
+
+* **[🔗 Repository](Sorry it's for private usage only)**
+* **[📂 Source Code on GitHub](if you want it, hit me up)**

@@ -1,0 +1,40 @@
+---
+title: "Membuat, mengubah, dan menghapus project"
+summary: "Kelola konten project pada bagian work di Magic Portfolio."
+publishedAt: "2025-04-19"
+tag: "Magic Portfolio"
+---
+
+## Kelola Project
+
+Kamu bisa menambah, mengubah, dan menghapus project lewat file `*.mdx` di folder `src/app/work/projects`.
+
+## Frontmatter
+
+Frontmatter digunakan untuk metadata project seperti judul, ringkasan, gambar, tim, link, dan tag.
+
+```tsx
+---
+title: "Mengembangkan design system untuk indie creator"
+publishedAt: "2025-03-17"
+summary: "Once UI membantu creator dan tim kecil membangun web app lebih cepat."
+images:
+  - "/images/projects/project-01/cover-02.jpg"
+team:
+  - name: "Lorant One"
+    role: "Software Engineer"
+link: "https://once-ui.com/"
+---
+```
+
+## Sintaks MDX
+
+Konten project ditulis dengan MDX agar bisa memakai markdown sekaligus komponen React.
+
+## Komponen Kustom
+
+Jika ingin pakai komponen tambahan di MDX, impor di `src/components/mdx.tsx` lalu daftarkan ke object `components`.
+
+## Hot Reload
+
+Hot reload file MDX belum didukung penuh saat ini.

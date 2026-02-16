@@ -15,6 +15,7 @@ import {
 import { baseURL, certificates, person } from "@/resources";
 import { Award, ExternalLink, Calendar, Building2 } from "lucide-react";
 import styles from "./certificates.module.scss";
+import { useLocale } from "@/i18n/client";
 
 interface CertificateCardProps {
     name: string;
@@ -23,6 +24,7 @@ interface CertificateCardProps {
     link?: string;
     skills?: string[];
     index: number;
+    viewCertificateLabel: string;
 }
 
 const CertificateCard: React.FC<CertificateCardProps> = ({
@@ -32,6 +34,7 @@ const CertificateCard: React.FC<CertificateCardProps> = ({
     link,
     skills,
     index,
+    viewCertificateLabel,
 }) => {
     return (
         <RevealFx translateY="8" delay={0.1 * index} fillWidth>
@@ -83,7 +86,7 @@ const CertificateCard: React.FC<CertificateCardProps> = ({
                         >
                             <Row gap="8" vertical="center">
                                 <ExternalLink size={14} />
-                                <Text variant="label-default-s">View Certificate</Text>
+                                <Text variant="label-default-s">{viewCertificateLabel}</Text>
                             </Row>
                         </SmartLink>
                     )}
@@ -94,6 +97,8 @@ const CertificateCard: React.FC<CertificateCardProps> = ({
 };
 
 export default function CertificatesPage() {
+    const { t } = useLocale();
+
     // Group certificates by issuer
     const groupedCertificates = certificates.items.reduce(
         (acc, cert) => {
@@ -146,7 +151,7 @@ export default function CertificatesPage() {
                 <RevealFx translateY="4">
                     <Row gap="12" vertical="center">
                         <Award size={32} className={styles.headerIcon} />
-                        <Heading variant="display-strong-l">Certifications</Heading>
+                        <Heading variant="display-strong-l">{t.certificates.title}</Heading>
                     </Row>
                 </RevealFx>
                 <RevealFx translateY="8" delay={0.1}>
@@ -156,8 +161,7 @@ export default function CertificatesPage() {
                         wrap="balance"
                         align="center"
                     >
-                        Professional certifications and credentials I've earned throughout my
-                        learning journey.
+                        {t.certificates.subtitle}
                     </Text>
                 </RevealFx>
 
@@ -169,7 +173,7 @@ export default function CertificatesPage() {
                                 {certificates.items.length}
                             </Text>
                             <Text variant="label-default-s" onBackground="neutral-weak">
-                                Certificates
+                                {t.certificates.certificatesLabel}
                             </Text>
                         </Column>
                         <Column horizontal="center">
@@ -177,7 +181,7 @@ export default function CertificatesPage() {
                                 {Object.keys(groupedCertificates).length}
                             </Text>
                             <Text variant="label-default-s" onBackground="neutral-weak">
-                                Issuers
+                                {t.certificates.issuersLabel}
                             </Text>
                         </Column>
                     </Row>
@@ -211,6 +215,7 @@ export default function CertificatesPage() {
                                     link={cert.link}
                                     skills={cert.skills}
                                     index={idx}
+                                    viewCertificateLabel={t.certificates.viewCertificate}
                                 />
                             );
                         })}

@@ -1,0 +1,48 @@
+---
+title: "Memperbarui konten Magic Portfolio"
+summary: "Personalisasi template portofolio dengan konten milikmu sendiri."
+publishedAt: "2025-04-18"
+tag: "Magic Portfolio"
+---
+
+## Avatar
+
+Ganti file `public/images/avatar.jpg` dengan avatar kamu sendiri. Gambar ini dipakai di halaman `/about` dan juga gambar Open Graph yang di-generate otomatis.
+
+## Favicon
+
+Ganti file `src/app/favicon.ico` dengan favicon milikmu.
+
+## Konten Utama
+
+Perbarui isi pada file `src/resources/content.tsx` sesuai profilmu. Karena banyak properti menerima `ReactNode`, kamu bisa pakai komponen kustom asalkan diimpor dulu.
+
+```tsx
+import { InlineCode } from "@once-ui-system/core";
+import Link from "next/link";
+```
+
+## Detail Personal
+
+Data personal dipakai lintas aplikasi untuk judul, label, lokasi, waktu, dan bahasa.
+
+```tsx
+const person = {
+  firstName: "Selene",
+  lastName: "Yu",
+  role: "Design Engineer",
+  avatar: "/images/avatar.jpg",
+  location: "Asia/Jakarta",
+  languages: ["English", "Bahasa"],
+};
+```
+
+## Tautan Sosial
+
+Tautan sosial ditampilkan di halaman `/about` dan footer. Kamu juga bisa pakai icon custom lewat `src/resources/icons.ts`.
+
+## Objek per Halaman
+
+Setiap halaman punya object konten sendiri untuk mengatur judul, deskripsi, heading, subheading, dan data dinamis.
+
+`label` dipakai untuk menu header, sedangkan `title` dan `description` dipakai untuk metadata halaman.

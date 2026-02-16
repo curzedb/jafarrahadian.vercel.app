@@ -17,6 +17,7 @@ import { baseURL, about, person, social } from "@/resources";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
+import { getServerDictionary } from "@/i18n/server";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -28,7 +29,9 @@ export async function generateMetadata() {
   });
 }
 
-export default function About() {
+export default async function About() {
+  const { t } = await getServerDictionary();
+
   const structure = [
     {
       title: about.intro.title,
@@ -115,7 +118,7 @@ export default function About() {
                 variant="secondary"
                 download
               >
-                Download My CV
+                {t.about.downloadCv}
               </Button>
             </Row>
           </Column>
@@ -144,7 +147,7 @@ export default function About() {
                 }}
               >
                 <Icon paddingLeft="12" name="calendar" onBackground="brand-weak" />
-                <Row paddingX="8">Schedule a call</Row>
+                <Row paddingX="8">{t.about.scheduleCall}</Row>
                 <IconButton
                   href={about.calendar.link}
                   data-border="rounded"

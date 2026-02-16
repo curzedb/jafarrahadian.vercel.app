@@ -1,0 +1,46 @@
+---
+title: "Membuat, mengubah, dan menghapus artikel blog"
+summary: "Kelola artikel di bagian blog Magic Portfolio dengan file MDX."
+publishedAt: "2025-03-17"
+tag: "Magic Portfolio"
+---
+
+## Kelola Artikel
+
+Kamu bisa menambah, mengubah, dan menghapus artikel dengan mengelola file `*.mdx` di folder `src/app/blog/posts`.
+
+## Frontmatter
+
+Frontmatter dipakai untuk metadata artikel seperti judul, tanggal, gambar, ringkasan, dan tag. Data ini juga dipakai untuk meta tag dan open graph.
+
+```tsx
+---
+title: "Mencapai milestone baru dalam karier"
+publishedAt: "2024-04-08"
+image: "/images/gallery/img-02.jpg"
+summary: "Setiap perjalanan karier berisi tantangan, pertumbuhan, dan momen penting."
+tag: "Jurnal"
+---
+```
+
+## Sintaks MDX
+
+Konten artikel bisa ditulis dengan MDX agar lebih fleksibel: gabungan markdown + komponen React.
+
+## Komponen Kustom
+
+Kalau ingin memakai komponen khusus di file MDX, impor dulu di `src/components/mdx.tsx`, lalu daftarkan ke object `components`.
+
+```tsx
+const components = {
+  p: createParagraph as any,
+  img: createImage as any,
+  a: CustomLink as any,
+  Table,
+  CodeBlock,
+};
+```
+
+## Hot Reload
+
+Saat ini hot reload untuk MDX belum didukung penuh, tetapi sedang dikerjakan.

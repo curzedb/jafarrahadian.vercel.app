@@ -1,4 +1,4 @@
-import { getPosts } from "@/utils/utils";
+import { getLocalizedPosts } from "@/utils/utils";
 import { Grid } from "@once-ui-system/core";
 import Post from "./Post";
 
@@ -8,6 +8,7 @@ interface PostsProps {
   thumbnail?: boolean;
   direction?: "row" | "column";
   exclude?: string[];
+  locale?: "en" | "id";
 }
 
 export function Posts({
@@ -16,8 +17,9 @@ export function Posts({
   thumbnail = false,
   exclude = [],
   direction,
+  locale = "en",
 }: PostsProps) {
-  let allBlogs = getPosts(["src", "app", "blog", "posts"]);
+  let allBlogs = getLocalizedPosts(["src", "app", "blog", "posts"], locale);
 
   // Exclude by slug (exact match)
   if (exclude.length) {

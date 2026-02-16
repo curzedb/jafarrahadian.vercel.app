@@ -1,0 +1,44 @@
+---
+title: "AI-Site: AI Percakapan untuk Knowledge Base Privat"
+publishedAt: "2025-08-30"
+summary: "Aplikasi full-stack berbasis Retrieval-Augmented Generation (RAG) untuk menjawab pertanyaan secara akurat dari dokumen internal perusahaan."
+tags: ['Python', 'FastAPI', 'Next.js', 'RAG', 'LLM']
+images:
+  - "/images/projects/aisite/foto-1.png"
+impact:
+  - "50% Lebih Cepat untuk Retrieval"
+  - "Halusinasi Hampir Nol"
+team:
+  - name: "Jafar Rahadian"
+    role: "AI/ML Engineer and Full-Stack Web Dev"
+    avatar: "/images/foto.png"
+    linkedIn: "https://www.linkedin.com/in/jafar-rahadian/"
+---
+
+## Gambaran Umum
+
+AISite adalah platform AI percakapan full-stack untuk menjadikan dokumen internal sebagai knowledge base yang bisa ditanya secara natural language. Sistem ini dirancang agar jawaban tetap berbasis konteks dokumen privat, sehingga meminimalkan halusinasi.
+
+## Teknologi Inti: Pipeline RAG
+
+1. **Transformasi Query**: pertanyaan user dioptimalkan menjadi query pencarian.
+2. **Vector Retrieval**: query digunakan untuk mengambil chunk paling relevan dari FAISS.
+3. **Relevance Gate**: chunk disaring agar hanya konteks yang benar-benar relevan yang dipakai.
+4. **Prompt Engineering**: konteks + pertanyaan asli digabung ke prompt final.
+5. **Answer Generation**: LLM utama menghasilkan jawaban berbasis konteks tersebut.
+6. **Streaming Response**: jawaban dikirim word-by-word agar terasa real-time.
+
+## Arsitektur Full-Stack
+
+- **Frontend**: Next.js + TypeScript + MUI.
+- **Backend**: FastAPI + SQLAlchemy.
+- **Database**: SQL Server (metadata, user, dan histori chat).
+- **Deployment**: Windows Server + NSSM + IIS reverse proxy.
+
+## Tantangan & Pembelajaran
+
+Tantangan utama adalah menjaga keseimbangan kecepatan vs akurasi RAG (chunking, threshold, dan retrieval strategy). Selain itu, deployment model LLM di server privat dengan kebutuhan response streaming rendah latensi juga menjadi poin penting.
+
+## Hasil
+
+Aplikasi berhasil menjadi "intelligent search" internal yang cepat, akurat, dan aman untuk knowledge base privat. Waktu pencarian informasi turun signifikan, dan arsitektur tetap scalable untuk pengembangan model berikutnya.

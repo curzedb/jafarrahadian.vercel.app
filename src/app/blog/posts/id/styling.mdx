@@ -1,0 +1,30 @@
+---
+title: "Mengatur styling portofolio"
+summary: "Styling Magic Portfolio menggunakan data-attributes dari Once UI."
+image: "/images/gallery/horizontal-3.jpg"
+publishedAt: "2025-04-21"
+tag: "Magic Portfolio"
+---
+
+## Gaya Global
+
+Magic Portfolio memanfaatkan sistem tema Once UI berbasis data-attributes.
+
+Kamu bisa mengatur tema, neutral, brand, accent, border, surface, transisi, dan skala UI dari file konfigurasi.
+
+```tsx
+theme: 'dark',
+neutral: 'gray',
+brand: 'blue',
+accent: 'indigo',
+solid: 'contrast',
+solidStyle: 'flat',
+border: 'playful',
+surface: 'translucent',
+transition: 'all',
+scaling: '100'
+```
+
+## Efek Background
+
+Di `layout.tsx` sudah tersedia background effect (mask, gradient, dots, lines, grid). Semuanya bisa dikustomisasi lewat object `effects` di konfigurasi.

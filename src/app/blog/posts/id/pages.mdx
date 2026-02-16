@@ -1,0 +1,40 @@
+---
+title: "Mengaktifkan atau menonaktifkan halaman"
+summary: "RouteGuard di Magic Portfolio mengatur akses halaman berdasarkan konfigurasi route."
+image: "/images/gallery/horizontal-2.jpg"
+publishedAt: "2025-04-22"
+tag: "Magic Portfolio"
+---
+
+## Aktif / Nonaktif Halaman
+
+Komponen `RouteGuard` mengatur render halaman berdasarkan object `routes` pada konfigurasi.
+
+```tsx
+const routes = {
+  '/': true,
+  '/about': true,
+  '/work': true,
+  '/blog': true,
+  '/gallery': false,
+};
+```
+
+Konfigurasi di atas membuat halaman `/gallery` tidak bisa diakses dan tidak muncul di navigasi.
+
+## Menambah Halaman Baru
+
+Saat menambah halaman baru, daftarkan path-nya ke object `routes`.
+
+```tsx
+const routes = {
+  '/': true,
+  '/about': true,
+  '/work': true,
+  '/blog': true,
+  '/gallery': false,
+  '/music': true,
+};
+```
+
+Setelah itu, tambahkan juga menu navigasinya di header agar user bisa membukanya.

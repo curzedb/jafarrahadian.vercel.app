@@ -1,0 +1,38 @@
+---
+title: "Menggunakan komponen kustom di markdown"
+publishedAt: "2025-04-20"
+summary: "Panduan singkat penggunaan komponen Once UI di konten MDX."
+tag: "Magic Portfolio"
+---
+
+Magic Portfolio memetakan sebagian elemen HTML default ke komponen Once UI agar tampilan konsisten dan lebih fungsional.
+
+## Komponen yang umum dipakai
+
+- `Feedback` untuk menampilkan informasi penting.
+- `Table` untuk data terstruktur.
+- `CodeBlock` dan `InlineCode` untuk snippet kode.
+- `Accordion` untuk konten expandable.
+- `Button`, `Card`, dan `Media` untuk komposisi UI konten.
+
+## Cara pakai di MDX
+
+1. Impor komponen di `src/components/mdx.tsx`.
+2. Daftarkan ke object `components`.
+3. Gunakan langsung di file `.mdx`.
+
+```tsx
+const components = {
+  p: createParagraph as any,
+  img: createImage as any,
+  a: CustomLink as any,
+  Table,
+  CodeBlock,
+  Feedback,
+  Accordion,
+  Button,
+  Card,
+};
+```
+
+Dengan pola ini, artikel bisa tetap ditulis seperti markdown biasa tetapi punya kemampuan komponen React penuh.

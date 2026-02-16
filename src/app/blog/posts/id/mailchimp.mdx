@@ -1,0 +1,39 @@
+---
+title: "Setup Mailchimp dan kumpulkan email"
+summary: "Konfigurasi blok newsletter Mailchimp di Magic Portfolio."
+publishedAt: "2025-04-16"
+tag: "Magic Portfolio"
+---
+
+## Akun Mailchimp
+
+Buat akun di [Mailchimp](https://mailchimp.com) dan siapkan audience/list baru jika belum ada.
+
+## Embed Form
+
+Buat [embed form](https://mailchimp.com/help/add-a-signup-form-to-your-website/) lalu salin URL action ke konfigurasi portfolio.
+
+```tsx
+const mailchimp = {
+  action: 'https://url/subscribe/post?parameters',
+  effects: {
+    ...
+  }
+};
+```
+
+## Konten Newsletter
+
+Judul dan deskripsi newsletter dapat diubah di file konten.
+
+```tsx
+const newsletter = {
+  display: true,
+  title: <>Subscribe to {person.firstName}'s Newsletter</>,
+  description: <>Tuliskan deskripsi newsletter milikmu di sini.</>,
+};
+```
+
+## Efek Latar
+
+Komponen `Mailchimp.tsx` sudah punya background effect bawaan (gradient, dots, lines, grid). Nilainya bisa diatur melalui object `mailchimp.effects`.

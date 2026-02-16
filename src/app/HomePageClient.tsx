@@ -9,20 +9,36 @@ import { home, about, person, baseURL } from "@/resources";
 import { Mailchimp } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import styles from "./Home.module.scss";
+import type { AppLocale } from "@/i18n/config";
+import { useLocale } from "@/i18n/client";
 
-const ProfileSection = () => {
+type ProjectPost = {
+  slug: string;
+  metadata: Record<string, unknown>;
+  content: string;
+};
+
+const ProfileSection = ({
+  profileTitle,
+  paragraphOne,
+  paragraphTwo,
+}: {
+  profileTitle: string;
+  paragraphOne: string;
+  paragraphTwo: string;
+}) => {
   return (
     <section className={styles.profileSection}>
       <Row fillWidth vertical="start" gap="40">
         <Column flex={3}>
-          <Heading variant="display-strong-s">PROFILE:</Heading>
+          <Heading variant="display-strong-s">{profileTitle}</Heading>
         </Column>
         <Column flex={9} gap="24">
           <Text onBackground="neutral-weak" variant="body-default-m" style={{ lineHeight: "175%", textAlign: 'justify' }}>
-            Recent Informatics Engineering graduate with strong expertise in Machine Learning and Full-Stack Web Development. Skilled in developing AI-driven solutions, data analysis workflows, and end-to-end web applications. Proficient in Python (TensorFlow, Scikit-learn, Pandas, NumPy), SQL databases (MySQL, PostgreSQL, SQL Server, SQLite), Web App (Next.JS, Laravel, Tailwind, Material UI, and Once UI) and containerization with Docker.
+            {paragraphOne}
           </Text>
           <Text onBackground="neutral-weak" variant="body-default-m" style={{ lineHeight: "175%", textAlign: 'justify' }}>
-            Experienced in building responsive frontends with Next.Js, Laravel 12, and CI4, and developing backend systems with PHP and Fast API Python. At PT. Astra Visteon Indonesia, contributed to projects involving AI, process automation, and system development, delivering measurable improvements in efficiency and performance. A fast learner with a passion for innovation, committed to leveraging technology to create impactful solutions.
+            {paragraphTwo}
           </Text>
         </Column>
       </Row>
@@ -30,7 +46,7 @@ const ProfileSection = () => {
   );
 };
 
-const ViewCounter = () => {
+const ViewCounter = ({ label }: { label: string }) => {
   const [views, setViews] = useState<number | null>(null);
   useEffect(() => {
     fetch('/api/views')
@@ -42,13 +58,20 @@ const ViewCounter = () => {
   return (
     <Row gap="4" vertical="center" onBackground="neutral-weak" textVariant="label-default-s">
       <Icon name="eye" size="s" />
-      <span>{new Intl.NumberFormat().format(views)} views</span>
+      <span>{new Intl.NumberFormat().format(views)} {label}</span>
     </Row>
   );
 };
 
-export function HomePageClient({ projects }: { projects: any[] }) {
+export function HomePageClient({ projects, initialLocale }: { projects: ProjectPost[]; initialLocale: AppLocale }) {
   const featuredProject = projects.slice(0, 1);
+  const { locale, setLocale, t } = useLocale();
+
+  useEffect(() => {
+    if (locale !== initialLocale) {
+      setLocale(initialLocale);
+    }
+  }, [initialLocale, locale, setLocale]);
   
   return (
     <Column maxWidth="m" gap="xl" paddingY="12" horizontal="center">
@@ -88,10 +111,10 @@ export function HomePageClient({ projects }: { projects: any[] }) {
                     {about.avatar.display && (
                     <Avatar marginRight="8" style={{ marginLeft: "-0.75rem" }} src={person.avatar} size="m" />
                     )}
-                    {about.title}
+                    {t.home.aboutButton}
                 </Row>
                 </Button>
-                <img src="https://hits.sh/jafarrahadian.vercel.app.svg?style=flat&label=Visitors&color=4c1d95" />
+                <img src="https://hits.sh/jafarrahadian.vercel.app.svg?style=flat&label=Visitors&color=4c1d95" alt="Visitors counter" />
 
             </Row>
            </RevealFx>
@@ -100,7 +123,12 @@ export function HomePageClient({ projects }: { projects: any[] }) {
       <RevealFx translateY="16" delay={0.6}>
         <Projects projects={featuredProject} />
       </RevealFx>
-      <ProfileSection />
+      <ViewCounter label={t.home.views} />
+      <ProfileSection
+        profileTitle={t.home.profileTitle}
+        paragraphOne={t.home.profileParagraph1}
+        paragraphTwo={t.home.profileParagraph2}
+      />
     </Column>
   );
 }

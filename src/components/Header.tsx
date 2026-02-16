@@ -8,6 +8,7 @@ import { Line, Row, ToggleButton } from "@once-ui-system/core";
 import { routes, display, person, about, blog, work, gallery, certificates } from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Header.module.scss";
+import { useLocale } from "@/i18n/client";
 
 import { Home, User, LayoutGrid, ImageIcon, Moon, Sun, Award } from "lucide-react";
 
@@ -46,6 +47,7 @@ export default TimeDisplay;
 
 export const Header = () => {
   const pathname = usePathname() ?? "";
+  const { locale, t } = useLocale();
 
   return (
     <header className={styles.headerWrapper}>
@@ -53,7 +55,7 @@ export const Header = () => {
 
         <div className={`${styles.navSection} ${styles.navLeft}`}>
           <div className={styles.locationTime}>
-            {display.time && <TimeDisplay timeZone={person.location} />}
+            {display.time && <TimeDisplay timeZone={person.location} locale={locale === "id" ? "id-ID" : "en-GB"} />}
           </div>
         </div>
 
@@ -71,7 +73,7 @@ export const Header = () => {
               <ToggleButton href="/about" selected={pathname === "/about"}>
                 <Row as="span" s={{ hide: true }} gap="8" vertical="center">
                   <User size={16} />
-                  <span>{about.label}</span>
+                  <span>{t.nav.about}</span>
                 </Row>
                 <Row as="span" hide s={{ hide: false }} vertical="center">
                   <User size={16} />
@@ -83,7 +85,7 @@ export const Header = () => {
               <ToggleButton href="/work" selected={pathname.startsWith("/work")}>
                 <Row as="span" s={{ hide: true }} gap="8" vertical="center">
                   <LayoutGrid size={16} />
-                  <span>Projects</span>
+                  <span>{t.nav.projects}</span>
                 </Row>
                 <Row as="span" hide s={{ hide: false }} vertical="center">
                   <LayoutGrid size={16} />
@@ -95,7 +97,7 @@ export const Header = () => {
               <ToggleButton href="/certificates" selected={pathname.startsWith("/certificates")}>
                 <Row as="span" s={{ hide: true }} gap="8" vertical="center">
                   <Award size={16} />
-                  <span>{certificates.label}</span>
+                  <span>{t.nav.certificates}</span>
                 </Row>
                 <Row as="span" hide s={{ hide: false }} vertical="center">
                   <Award size={16} />
@@ -107,7 +109,7 @@ export const Header = () => {
               <ToggleButton href="/gallery" selected={pathname.startsWith("/gallery")}>
                 <Row as="span" s={{ hide: true }} gap="8" vertical="center">
                   <ImageIcon size={16} />
-                  <span>{gallery.label}</span>
+                  <span>{t.nav.gallery}</span>
                 </Row>
                 <Row as="span" hide s={{ hide: false }} vertical="center">
                   <ImageIcon size={16} />

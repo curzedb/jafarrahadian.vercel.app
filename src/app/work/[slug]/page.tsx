@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getPosts } from "@/utils/utils";
+import { getLocalizedPosts } from "@/utils/utils";
 import {
   Meta, Schema, Column, Heading, Text, Row, Avatar, Line, Tag,
   Carousel, Flex 
@@ -8,12 +8,21 @@ import { baseURL, person } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
 import { ScrollToHash, CustomMDX } from "@/components";
 import { Projects } from "@/components/work/Projects";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { iconLibrary } from "@/resources/icons";
+import { getServerDictionary, getServerLocale } from "@/i18n/server";
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
-  const posts = getPosts(["src", "app", "work", "projects"]);
-  return posts.map((post) => ({ slug: post.slug }));
+  const locales = ["en", "id"];
+  const slugs = Array.from(
+    new Set(
+      locales.flatMap((locale) =>
+        getLocalizedPosts(["src", "app", "work", "projects"], locale).map((post) => post.slug),
+      ),
+    ),
+  );
+
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -21,10 +30,11 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string | string[] }>;
 }): Promise<Metadata> {
+  const locale = await getServerLocale();
   const routeParams = await params;
   const slugPath = Array.isArray(routeParams.slug) ? routeParams.slug.join("/") : routeParams.slug || "";
-  const posts = getPosts(["src", "app", "work", "projects"]);
-  let post = posts.find((post) => post.slug === slugPath);
+  const posts = getLocalizedPosts(["src", "app", "work", "projects"], locale);
+  const post = posts.find((post) => post.slug === slugPath);
   if (!post) return {};
 
   return Meta.generate({
@@ -41,9 +51,12 @@ export default async function Project({
 }: {
   params: Promise<{ slug: string | string[] }>;
 }) {
+  const { locale, t } = await getServerDictionary();
   const routeParams = await params;
   const slugPath = Array.isArray(routeParams.slug) ? routeParams.slug.join("/") : routeParams.slug || "";
-  let post = getPosts(["src", "app", "work", "projects"]).find((post) => post.slug === slugPath);
+  const post = getLocalizedPosts(["src", "app", "work", "projects"], locale).find(
+    (post) => post.slug === slugPath,
+  );
 
   if (!post) {
     notFound();
@@ -118,10 +131,10 @@ export default async function Project({
       <Column fillWidth gap="40" horizontal="center" marginTop="40">
         <Line maxWidth="40" />
         <Heading as="h2" variant="heading-strong-xl" marginBottom="24">
-          Related projects
+          {t.work.relatedProjects}
         </Heading>
         <Projects projects={
-            getPosts(["src", "app", "work", "projects"])
+          getLocalizedPosts(["src", "app", "work", "projects"], locale)
               .filter(p => p.slug !== post.slug) 
               .slice(0, 1) 
           } 
