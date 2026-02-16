@@ -22,6 +22,23 @@ type Metadata = {
 
 import { notFound } from "next/navigation";
 
+const BLOG_POSTS_DIR = path.join(process.cwd(), "src", "app", "blog", "posts");
+const WORK_PROJECTS_DIR = path.join(process.cwd(), "src", "app", "work", "projects");
+
+const resolveContentDir = (customPath: string[]) => {
+  const normalizedPath = customPath.filter(Boolean).join("/");
+
+  if (normalizedPath === "src/app/blog/posts") {
+    return BLOG_POSTS_DIR;
+  }
+
+  if (normalizedPath === "src/app/work/projects") {
+    return WORK_PROJECTS_DIR;
+  }
+
+  throw new Error(`Unsupported content path: ${normalizedPath}`);
+};
+
 function getMDXFiles(dir: string) {
   if (!fs.existsSync(dir)) {
     notFound();
@@ -66,16 +83,16 @@ function getMDXData(dir: string) {
   });
 }
 
-export function getPosts(customPath = ["", "", "", ""]) {
-  const postsDir = path.join(process.cwd(), ...customPath);
+export function getPosts(customPath: string[]) {
+  const postsDir = resolveContentDir(customPath);
   return getMDXData(postsDir);
 }
 
 export function getLocalizedPosts(
-  customPath = ["", "", "", ""],
+  customPath: string[],
   locale?: string,
 ) {
-  const postsDir = path.join(process.cwd(), ...customPath);
+  const postsDir = resolveContentDir(customPath);
 
   if (locale) {
     const localizedDir = path.join(postsDir, locale);
