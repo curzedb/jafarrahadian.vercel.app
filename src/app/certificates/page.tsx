@@ -37,7 +37,7 @@ const CertificateCard: React.FC<CertificateCardProps> = ({
     viewCertificateLabel,
 }) => {
     return (
-        <RevealFx translateY="8" delay={0.1 * index} fillWidth>
+        <RevealFx translateY="8" delay={0.1 * index} fillWidth style={{ height: "100%" }}>
             <div className={styles.certificateCard}>
                 <Column gap="16" fillWidth style={{ height: "100%" }}>
                     {/* Header with icon */}

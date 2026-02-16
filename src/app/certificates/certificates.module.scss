@@ -2,8 +2,13 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   grid-auto-rows: 1fr;
+  align-items: stretch;
   gap: var(--static-space-24);
   width: 100%;
+}
+
+.certificatesGrid > * {
+  height: 100%;
 }
 
 .certificateCard {

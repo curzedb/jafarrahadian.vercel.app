@@ -28,7 +28,7 @@ const person: Person = {
 
 const newsletter: Newsletter = {
   display: false,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
+  title: <>Subscribe to {`${person.firstName}'s Newsletter`}</>,
   description: <>My weekly newsletter about creativity and engineering</>,
 };
 
@@ -57,7 +57,7 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>I'm Jafar Rahadian, AI/ML Engineer and Full-Stack Developer</>,
+  headline: <>I&apos;m Jafar Rahadian, AI/ML Engineer and Full-Stack Developer</>,
   featured: {
     display: true,
     title: (
@@ -71,9 +71,7 @@ const home: Home = {
     ),
     href: "/work/spp-app",
   },
-  subline: (
-    <>"Innovating with AI and technology for real-world impact."</>
-  ),
+  subline: <>“Innovating with AI and technology for real-world impact.”</>,
 };
 
 const about: About = {

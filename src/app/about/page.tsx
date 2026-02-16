@@ -68,6 +68,39 @@ export default async function About() {
         work: {
           ...aboutBase.work,
           title: "Pengalaman Kerja",
+          experiences: aboutBase.work.experiences.map((experience) => {
+            if (experience.company === "PT. Astra Visteon Indonesia") {
+              return {
+                ...experience,
+                timeframe: "Juni 2025 - Sekarang",
+                role: "Magang Full-Stack Web Developer dan AI/ML Engineer",
+                achievements: [
+                  "Membangun sistem email RFQ otomatis, meningkatkan efisiensi operasional hingga 10%-30% (Juara 4 Quality Control Circle di PT. AVI).",
+                  "Mengembangkan sistem alur kerja berbasis web untuk internal claim, meningkatkan otomatisasi proses hingga 25%-35% (Juara 1 Quality Control Circle di PT. AVI).",
+                  "Membuat chatbot berbasis AI untuk pencarian dokumen, mempercepat pencarian informasi hingga 50%.",
+                  "Merekayasa solusi monitoring kompresor berbasis web dengan machine learning, menurunkan risiko kegagalan produksi hingga 5-15%.",
+                  "Merancang dan mengimplementasikan sistem backup database otomatis untuk menjaga integritas data, menurunkan risiko kehilangan data akibat human error hingga 80% (menggunakan SSMS).",
+                  "Mengembangkan dashboard manajemen data berbasis web untuk memantau penggunaan resource PC (CPU, GPU, RAM, Disk) menggunakan Windows Exporter, Prometheus, dan Grafana, sehingga menurunkan risiko crash aplikasi akibat lonjakan resource mendadak sekitar 25%.",
+                  "Mengelola dan memelihara 5 VM Windows Server, termasuk konfigurasi sistem, instalasi software, upgrade, serta memastikan ketersediaan tinggi untuk aplikasi kritis. Berhasil mengeksekusi migrasi aplikasi server bersama vendor karena segmentasi jaringan baru dengan downtime minimal dan operasional tetap berjalan.",
+                  "Membangun aplikasi web Internal Control Audit Review yang komprehensif untuk mengelola dan melacak proses audit, monitoring kepatuhan SOP, serta menghasilkan laporan PDF/Excel yang detail.",
+                  "Mengelola dan memelihara aplikasi Scrap Control dan Record Delivery, termasuk peningkatan fitur, perbaikan bug, serta upgrade versi untuk meningkatkan efisiensi operasional. Menurunkan downtime hingga 25%.",
+                ],
+              };
+            }
+
+            if (experience.company === "BPTI (Badan Pengembangan Teknologi dan Informasi) UHAMKA") {
+              return {
+                ...experience,
+                timeframe: "Februari 2023 - Juni 2023",
+                achievements: [
+                  "Membuat video tutorial onboarding untuk lebih dari 25 dosen baru UHAMKA.",
+                  "Mengoperasikan kamera dan melakukan live streaming konferensi untuk lebih dari 250 peserta menggunakan vMix dan OBS.",
+                ],
+              };
+            }
+
+            return experience;
+          }),
         },
         studies: {
           ...aboutBase.studies,
@@ -76,6 +109,7 @@ export default async function About() {
             if (institution.name === "University Muhammadiyah Prof. Dr. Hamka") {
               return {
                 ...institution,
+                name: "Universitas Muhammadiyah Prof. Dr. Hamka",
                 description: <>Sarjana Teknik Informatika, IPK: 3.82/4.00 (September 2020 - Desember 2024).</>,
               };
             }

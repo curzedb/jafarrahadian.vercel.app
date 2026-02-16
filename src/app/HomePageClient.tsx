@@ -114,6 +114,7 @@ export function HomePageClient({ projects, initialLocale }: { projects: ProjectP
                     {t.home.aboutButton}
                 </Row>
                 </Button>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="https://hits.sh/jafarrahadian.vercel.app.svg?style=flat&label=Visitors&color=4c1d95" alt="Visitors counter" />
 
             </Row>
