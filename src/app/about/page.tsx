@@ -142,6 +142,30 @@ export default async function About() {
               };
             }
 
+            if (institution.name === "Data Science Learning Path") {
+              return {
+                ...institution,
+                description: (
+                  <>
+                    Coding Camp didukung oleh DBS Foundation
+                    <br />
+                    Feb 2026 - Sekarang · 2 bln
+                    <br />
+                    Remote
+                    <br />
+                    <br />
+                    <strong>Kelas Dasar:</strong>
+                    <ul style={{ paddingLeft: "20px", margin: "8px 0" }}>
+                      <li>Belajar dasar-dasar data science.</li>
+                      <li>Belajar dasar Structured Query Language (SQL).</li>
+                      <li>Belajar dasar bahasa pemrograman Python.</li>
+                      <li>Belajar dasar machine learning.</li>
+                    </ul>
+                  </>
+                ),
+              };
+            }
+
             return institution;
           }),
         },

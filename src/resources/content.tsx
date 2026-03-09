@@ -172,6 +172,27 @@ const about: About = {
           </>
         ),
       },
+      {
+        name: "Data Science Learning Path",
+        description: (
+          <>
+            Coding Camp powered by DBS Foundation
+            <br />
+            Feb 2026 - Present · 2 mos
+            <br />
+            Remote
+            <br />
+            <br />
+            <strong>Basic Class:</strong>
+            <ul style={{ paddingLeft: '20px', margin: '8px 0' }}>
+              <li>Learn the basics of data science.</li>
+              <li>Learn basic Structured Query Language (SQL).</li>
+              <li>Learn basic Python programming language.</li>
+              <li>Learn basic machine learning.</li>
+            </ul>
+          </>
+        ),
+      },
     ],
   },
   technical: {
@@ -419,7 +440,7 @@ const certificates: Certificates = {
       skills: ["TensorFlow", "Machine Learning", "Deep Learning"],
     },
     {
-      name: "Basic SQL",
+      name: "Basic SQL(Structured Query Language)",
       issuer: "Dicoding Indonesia",
       date: "2026",
       link: "https://www.dicoding.com/certificates/GRX5WNNLKZ0M",
