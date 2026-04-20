@@ -1,0 +1,45 @@
+---
+title: "BAAN GR API – RESTful API Otomasi Goods Receipt"
+publishedAt: "2026-04-20"
+summary: "RESTful API yang aman untuk Infor LN (BAAN) guna mengotomasi alur kerja Goods Receipt, menangani pembaruan flag real-time melalui manajemen LOT dengan protokol akses terotentikasi."
+tags: ['PHP', 'Laravel', 'SQL Server', 'Infor LN', 'REST API']
+images: []
+impact:
+  - "Otomasi Alur Kerja GR"
+  - "Pertukaran Data Aman"
+team:
+  - name: "Jafar Rahadian"
+    role: "AI/ML Engineer and Full-Stack Web Dev"
+    avatar: "/images/foto.png"
+    linkedIn: "https://www.linkedin.com/in/jafar-rahadian/"
+---
+
+## Gambaran Umum
+
+Pemrosesan Goods Receipt (GR) secara manual dalam sistem ERP Infor LN (BAAN) memakan waktu dan rentan terhadap kesalahan. Proyek ini menyediakan RESTful API yang aman untuk mengotomasi alur kerja GR dengan berinteraksi langsung ke database Infor LN, menangani pembaruan flag LOT secara real-time, dan memastikan pengambilan data yang terstandarisasi untuk sistem internal.
+
+## Fitur Utama
+
+- **Pemrosesan GR Otomatis**: Menghilangkan input data manual dengan mengotomasi alur kerja Goods Receipt melalui panggilan API terprogram ke database Infor LN.
+- **Manajemen Flag LOT Real-Time**: Menangani pembaruan flag LOT secara real-time, memastikan pelacakan barang yang akurat selama proses penerimaan.
+- **Protokol Akses Terotentikasi**: Mengimplementasikan mekanisme autentikasi yang aman untuk melindungi data ERP sensitif dan memastikan hanya sistem yang terotorisasi yang dapat berinteraksi dengan API.
+- **Pengambilan Data Terstandarisasi**: Menyediakan endpoint API yang konsisten dan terstruktur bagi sistem internal untuk meng-query data GR, mengurangi kompleksitas integrasi.
+- **Penanganan Error & Logging**: Penanganan error yang komprehensif serta logging transaksi untuk auditabilitas dan troubleshooting.
+
+## Teknologi
+
+- **Python / FastAPI**: Framework web berperforma tinggi untuk membangun RESTful API dengan dokumentasi dan validasi otomatis.
+- **SQL Server**: Lapisan database untuk interaksi langsung dengan tabel data dan catatan transaksi Infor LN (BAAN).
+- **Infor LN (BAAN)**: Sistem Enterprise Resource Planning yang menjadi sumber data untuk operasi Goods Receipt dan manajemen LOT.
+- **Middleware Autentikasi**: Autentikasi berbasis token yang aman untuk mengontrol dan memvalidasi akses API.
+- **NSSM (Non-Sucking Service Manager)**: Digunakan untuk mendeploy dan mengelola API sebagai Windows service agar high availability.
+
+## Tantangan & Pembelajaran
+
+Tantangan utama adalah melakukan reverse-engineering skema database Infor LN untuk mengidentifikasi tabel dan relasi yang benar untuk operasi GR dan LOT tanpa mengganggu lingkungan ERP produksi. Mengimplementasikan autentikasi yang aman dan terintegrasi dengan infrastruktur yang ada sambil menjaga performa API juga memerlukan keputusan arsitektural yang cermat. Proyek ini memperdalam pemahaman tentang integrasi sistem enterprise dan pentingnya membangun API yang andal dan aman untuk alur kerja bisnis kritis.
+
+## Hasil
+
+API berhasil mengotomasi alur kerja Goods Receipt, menghilangkan langkah pemrosesan manual dan mengurangi risiko human error. Manajemen flag LOT secara real-time memastikan pelacakan yang akurat, sementara protokol akses terotentikasi menjaga keamanan data. Solusi ini berfungsi sebagai tulang punggung bagi AutoGR Dashboard, memungkinkan visibilitas end-to-end ke dalam proses GR.
+
+> **Catatan**: Proyek ini merupakan milik PT. Astra Visteon Indonesia dan kode sumber tidak tersedia secara publik.

@@ -120,6 +120,8 @@ const about: About = {
           <>Managed and maintained 5 Windows Server VMs, handling system configuration, software installation, upgrades, and ensuring high availability for critical applications. Successfully executed a server application migration with Vendor in response to new network segmentation, ensuring minimal downtime and operational continuity.</>,
           <>Built a comprehensive Internal Control Audit Review web application for managing and tracking audit processes, SOP compliance monitoring, and generating detailed PDF/Excel reports.</>,
           <>Managed and maintained Scrap Control and Record Delivery applications, implementing feature enhancements, bug fixes, and version upgrades to improve operational efficiency. Reduce downtime up to 25%.</>,
+          <>Developed a secure RESTful API for Infor LN to automate GR (Goods Receipt) workflows, specifically handling real-time flag updates through LOT management. Integrated authenticated access protocols to ensure secure data exchange and standardized retrieval for internal systems.</>,
+          <>Architected a Laravel-based dashboard to monitor the end-to-end flow of automated GR transactions from Infor LN. Streamlined operational oversight by centralizing data from Infor LN and REST APIs into an accessible, real-time tracking interface.</>,
         ],
         images: [
           { src: "/images/projects/avi/rfq.png", alt: "RFQ", width: 16, height: 9 },

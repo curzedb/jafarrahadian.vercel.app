@@ -84,6 +84,8 @@ export default async function About() {
                   "Mengelola dan memelihara 5 VM Windows Server, termasuk konfigurasi sistem, instalasi software, upgrade, serta memastikan ketersediaan tinggi untuk aplikasi kritis. Berhasil mengeksekusi migrasi aplikasi server bersama vendor karena segmentasi jaringan baru dengan downtime minimal dan operasional tetap berjalan.",
                   "Membangun aplikasi web Internal Control Audit Review yang komprehensif untuk mengelola dan melacak proses audit, monitoring kepatuhan SOP, serta menghasilkan laporan PDF/Excel yang detail.",
                   "Mengelola dan memelihara aplikasi Scrap Control dan Record Delivery, termasuk peningkatan fitur, perbaikan bug, serta upgrade versi untuk meningkatkan efisiensi operasional. Menurunkan downtime hingga 25%.",
+                  "Mengembangkan RESTful API yang aman untuk Infor LN guna mengotomasi alur kerja GR (Goods Receipt), khususnya menangani pembaruan flag secara real-time melalui manajemen LOT. Mengintegrasikan protokol akses terotentikasi untuk memastikan pertukaran data yang aman dan pengambilan data yang terstandarisasi bagi sistem internal.",
+                  "Merancang dashboard berbasis Laravel untuk memantau alur transaksi GR otomatis dari Infor LN secara end-to-end. Menyederhanakan pengawasan operasional dengan memusatkan data dari Infor LN dan REST API ke dalam antarmuka pelacakan real-time yang mudah diakses.",
                 ],
               };
             }

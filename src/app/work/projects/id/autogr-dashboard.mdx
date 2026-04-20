@@ -1,0 +1,45 @@
+---
+title: "AutoGR Dashboard – Sistem Monitoring Goods Receipt"
+publishedAt: "2026-04-20"
+summary: "Dashboard berbasis Laravel untuk memantau alur transaksi Goods Receipt (GR) otomatis dari Infor LN secara end-to-end, memusatkan data ke antarmuka pelacakan real-time."
+tags: ['PHP', 'Laravel', 'SQL Server', 'Infor LN', 'REST API']
+images: []
+impact:
+  - "Monitoring GR Real-Time"
+  - "Pengawasan Data Terpusat"
+team:
+  - name: "Jafar Rahadian"
+    role: "AI/ML Engineer and Full-Stack Web Dev"
+    avatar: "/images/foto.png"
+    linkedIn: "https://www.linkedin.com/in/jafar-rahadian/"
+---
+
+## Gambaran Umum
+
+Dalam lingkungan manufaktur yang mengandalkan ERP Infor LN (BAAN), alur kerja Goods Receipt (GR) sangat krusial namun sering kali kurang transparan. Proyek ini menyediakan dashboard terpusat berbasis Laravel yang memantau siklus lengkap transaksi GR otomatis — dari permintaan awal hingga konfirmasi penerimaan barang — memberikan insight operasional secara real-time kepada pemangku kepentingan.
+
+## Fitur Utama
+
+- **Pelacakan Transaksi End-to-End**: Memvisualisasikan alur lengkap transaksi GR yang diproses melalui BAAN GR API, mulai dari pembaruan flag LOT hingga konfirmasi penerimaan barang akhir.
+- **Sinkronisasi Data Real-Time**: Mengambil dan menampilkan data terkini dari Infor LN dan endpoint REST API, memastikan dashboard selalu mencerminkan kondisi operasional terbaru.
+- **Tampilan Data Terpusat**: Mengkonsolidasikan informasi dari berbagai sumber (database Infor LN, log REST API) ke dalam satu antarmuka terpadu untuk monitoring yang efisien.
+- **Pengawasan Operasional**: Memungkinkan supervisor dan operator untuk mengidentifikasi hambatan, transaksi gagal, atau penerimaan yang tertunda secara cepat tanpa perlu mengakses banyak sistem.
+- **Filter & Pencarian**: Menyediakan kemampuan filter berdasarkan tanggal, status, dan jenis transaksi untuk pengambilan dan analisis data yang efisien.
+
+## Teknologi
+
+- **PHP / Laravel**: Framework backend untuk membangun aplikasi dashboard, menangani routing, autentikasi, dan presentasi data.
+- **SQL Server**: Database utama untuk menyimpan dan meng-query data transaksi GR yang disinkronkan dari Infor LN.
+- **Infor LN (BAAN)**: Sistem ERP yang menjadi sumber data utama untuk Goods Receipt dan manajemen LOT.
+- **Integrasi REST API**: Mengonsumsi data dari BAAN GR API untuk menampilkan status transaksi secara real-time.
+- **Blade Templating**: Mesin template Laravel untuk merender tampilan dashboard yang dinamis dan responsif.
+
+## Tantangan & Pembelajaran
+
+Tantangan utama adalah merancang strategi sinkronisasi data yang mampu secara andal mencerminkan kondisi transaksi GR di dua sistem (Infor LN dan REST API) tanpa menimbulkan latensi atau inkonsistensi data. Memahami model data Infor LN dan memetakannya ke skema yang ramah web memerlukan kolaborasi erat dengan spesialis ERP. Proyek ini memperkuat pentingnya membangun pipeline data yang robust antara sistem enterprise dan aplikasi web modern.
+
+## Hasil
+
+Dashboard berhasil menyederhanakan pengawasan operasional dengan menyediakan satu titik akses untuk monitoring alur kerja GR otomatis. Supervisor kini dapat melacak transaksi secara real-time, mengidentifikasi masalah secara proaktif, dan mengambil keputusan berbasis data — secara signifikan mengurangi waktu yang dihabiskan untuk menavigasi antarmuka ERP legacy.
+
+> **Catatan**: Proyek ini merupakan milik PT. Astra Visteon Indonesia dan kode sumber tidak tersedia secara publik.

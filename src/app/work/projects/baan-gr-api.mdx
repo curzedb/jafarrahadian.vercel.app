@@ -1,0 +1,45 @@
+---
+title: "BAAN GR API – Automated Goods Receipt RESTful API"
+publishedAt: "2026-04-20"
+summary: "A secure RESTful API for Infor LN (BAAN) to automate Goods Receipt workflows, handling real-time flag updates through LOT management with authenticated access protocols."
+tags: ['PHP', 'Laravel', 'SQL Server', 'Infor LN', 'REST API']
+images: []
+impact:
+  - "Automated GR Workflow"
+  - "Secure Data Exchange"
+team:
+  - name: "Jafar Rahadian"
+    role: "AI/ML Engineer and Full-Stack Web Dev"
+    avatar: "/images/foto.png"
+    linkedIn: "https://www.linkedin.com/in/jafar-rahadian/"
+---
+
+## Overview
+
+Manual Goods Receipt (GR) processing in Infor LN (BAAN) ERP systems is time-consuming and error-prone. This project provides a secure RESTful API that automates the GR workflow by interfacing directly with the Infor LN database, handling real-time LOT flag updates and ensuring standardized data retrieval for internal systems.
+
+## Key Features
+
+- **Automated GR Processing**: Eliminates manual data entry by automating the Goods Receipt workflow through programmatic API calls to the Infor LN database.
+- **Real-Time LOT Flag Management**: Handles real-time updates to LOT flags, ensuring accurate tracking of goods throughout the receipt process.
+- **Authenticated Access Protocols**: Implements secure authentication mechanisms to protect sensitive ERP data and ensure only authorized systems can interact with the API.
+- **Standardized Data Retrieval**: Provides consistent, well-structured API endpoints for internal systems to query GR data, reducing integration complexity.
+- **Error Handling & Logging**: Comprehensive error handling and transaction logging for auditability and troubleshooting.
+
+## Technologies Used
+
+- **Python / FastAPI**: High-performance web framework for building the RESTful API with automatic documentation and validation.
+- **SQL Server**: Database layer for direct interaction with the Infor LN (BAAN) data tables and transaction records.
+- **Infor LN (BAAN)**: Enterprise Resource Planning system serving as the data source for Goods Receipt and LOT management operations.
+- **Authentication Middleware**: Secure token-based authentication to control and validate API access.
+- **NSSM (Non-Sucking Service Manager)**: Used to deploy and manage the API as a Windows service for high availability.
+
+## Challenges and Learnings
+
+The primary challenge was reverse-engineering the Infor LN database schema to identify the correct tables and relationships for GR and LOT operations without disrupting the production ERP environment. Implementing secure authentication that integrates with the existing infrastructure while maintaining API performance also required careful architectural decisions. This project deepened understanding of enterprise system integration and the importance of building reliable, secure APIs for critical business workflows.
+
+## Outcome
+
+The API successfully automates the Goods Receipt workflow, eliminating manual processing steps and reducing the risk of human error. Real-time LOT flag management ensures accurate tracking, while authenticated access protocols maintain data security. The solution serves as the backbone for the AutoGR Dashboard, enabling end-to-end visibility into the GR process.
+
+> **Note**: This project is proprietary to PT. Astra Visteon Indonesia and the source code is not publicly available.
