@@ -21,6 +21,7 @@ export const i18n = {
       projects: "Projects",
       certificates: "Certificates",
       gallery: "Gallery",
+      blog: "Blog",
     },
     switcher: {
       title: "Language",
@@ -31,6 +32,7 @@ export const i18n = {
       profileTitle: "PROFILE:",
       views: "views",
       aboutButton: "About Me",
+      impactTitle: "At a Glance",
       profileParagraph1:
         "Informatics Engineering graduate with strong expertise in Machine Learning and Full-Stack Web Development. Skilled in developing AI-driven solutions, data analysis workflows, and end-to-end web applications. Proficient in Python (TensorFlow, Scikit-learn, Pandas, NumPy), SQL databases (MySQL, PostgreSQL, SQL Server, SQLite), Web App (Next.JS, Laravel, Tailwind, Material UI, and Once UI) and containerization with Docker.",
       profileParagraph2:
@@ -43,6 +45,9 @@ export const i18n = {
       relatedProjects: "Related projects",
       readCaseStudy: "Read case study",
       viewProject: "View project",
+      filterAll: "All",
+      filterAI: "AI / ML",
+      filterWeb: "Web Dev",
     },
     blog: {
       earlierPosts: "Earlier posts",
@@ -58,11 +63,14 @@ export const i18n = {
       viewCertificate: "View Certificate",
     },
     about: {
+      selectedWinsTitle: "Selected Wins",
       downloadCv: "Download My CV",
       scheduleCall: "Schedule a call",
     },
     footer: {
       attributionPrefix: "This website using material from",
+      collaborationText: "Open to work \u0026 collaboration",
+      contactButton: "Get in touch",
     },
     notFound: {
       title: "Page Not Found",
@@ -75,6 +83,7 @@ export const i18n = {
       projects: "Proyek",
       certificates: "Sertifikat",
       gallery: "Galeri",
+      blog: "Blog",
     },
     switcher: {
       title: "Bahasa",
@@ -85,6 +94,7 @@ export const i18n = {
       profileTitle: "PROFIL:",
       views: "dilihat",
       aboutButton: "Tentang Saya",
+      impactTitle: "Ringkasan",
       profileParagraph1:
         "Lulusan Teknik Informatika dengan keahlian kuat di bidang Machine Learning dan Full-Stack Web Development. Berpengalaman mengembangkan solusi berbasis AI, alur analisis data, serta aplikasi web end-to-end. Menguasai Python (TensorFlow, Scikit-learn, Pandas, NumPy), basis data SQL (MySQL, PostgreSQL, SQL Server, SQLite), pengembangan Web App (Next.JS, Laravel, Tailwind, Material UI, dan Once UI), serta containerization dengan Docker.",
       profileParagraph2:
@@ -97,6 +107,9 @@ export const i18n = {
       relatedProjects: "Proyek terkait",
       readCaseStudy: "Baca studi kasus",
       viewProject: "Lihat proyek",
+      filterAll: "Semua",
+      filterAI: "AI / ML",
+      filterWeb: "Web Dev",
     },
     blog: {
       earlierPosts: "Tulisan sebelumnya",
@@ -112,11 +125,14 @@ export const i18n = {
       viewCertificate: "Lihat Sertifikat",
     },
     about: {
+      selectedWinsTitle: "Pencapaian Terpilih",
       downloadCv: "Unduh CV Saya",
       scheduleCall: "Jadwalkan panggilan",
     },
     footer: {
       attributionPrefix: "Website ini menggunakan materi dari",
+      collaborationText: "Terbuka untuk kerja \u0026 kolaborasi",
+      contactButton: "Hubungi saya",
     },
     notFound: {
       title: "Halaman Tidak Ditemukan",

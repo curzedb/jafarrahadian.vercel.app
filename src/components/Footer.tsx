@@ -1,6 +1,6 @@
 "use client";
 
-import { Row, IconButton, SmartLink, Text } from "@once-ui-system/core";
+import { Column, Row, IconButton, SmartLink, Text } from "@once-ui-system/core";
 import { person, social } from "@/resources";
 import styles from "./Footer.module.scss";
 import { useLocale } from "@/i18n/client";
@@ -10,12 +10,31 @@ export const Footer = () => {
   const { t } = useLocale();
 
   return (
-    <Row as="footer" fillWidth padding="8" horizontal="center" s={{ direction: "column" }}>
+    <Column as="footer" fillWidth className={styles.footer}>
       <Row
+        fillWidth
+        paddingY="16"
+        paddingX="32"
+        horizontal="center"
+        vertical="center"
+        gap="16"
+        wrap
+        style={{ borderBottom: "1px solid var(--neutral-alpha-medium)" }}
+      >
+        <Text variant="body-default-s" onBackground="neutral-weak">
+          {t.footer.collaborationText}
+        </Text>
+        <SmartLink href={`mailto:${person.email}`}>
+          <Text variant="label-strong-s" onBackground="brand-medium">
+            {t.footer.contactButton} →
+          </Text>
+        </SmartLink>
+      </Row>
+      <Row
+        fillWidth
         className={styles.mobile}
-        maxWidth="m"
         paddingY="8"
-        paddingX="16"
+        paddingX="32"
         gap="16"
         horizontal="between"
         vertical="center"
@@ -51,6 +70,6 @@ export const Footer = () => {
         </Row>
       </Row>
       <Row height="80" hide s={{ hide: false }} />
-    </Row>
+    </Column>
   );
 };

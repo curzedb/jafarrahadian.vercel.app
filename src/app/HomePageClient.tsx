@@ -46,6 +46,45 @@ const ProfileSection = ({
   );
 };
 
+const ImpactSnapshot = ({ locale, title }: { locale: AppLocale; title: string }) => {
+  const stats =
+    locale === "id"
+      ? [
+          { value: "8+", label: "Sistem Produksi" },
+          { value: "2×", label: "Juara QCC" },
+          { value: "≤0.99%", label: "MAPE (Akurasi ML)" },
+          { value: "50%", label: "Lebih Cepat Pencarian" },
+        ]
+      : [
+          { value: "8+", label: "Production Systems" },
+          { value: "2×", label: "QCC Award Winner" },
+          { value: "≤0.99%", label: "MAPE (ML Accuracy)" },
+          { value: "50%", label: "Faster Info Retrieval" },
+        ];
+
+  return (
+    <RevealFx translateY="8" delay={0.5} fillWidth>
+      <Column fillWidth gap="m" paddingY="24" style={{ borderTop: "1px solid var(--neutral-alpha-medium)", borderBottom: "1px solid var(--neutral-alpha-medium)" }}>
+        <Text variant="label-default-xs" onBackground="neutral-weak" align="center" style={{ letterSpacing: "0.08em", textTransform: "uppercase" }}>
+          {title}
+        </Text>
+        <Row fillWidth gap="24" wrap horizontal="center">
+          {stats.map((stat) => (
+            <Column key={stat.value} horizontal="center" gap="4" style={{ minWidth: "100px", flex: "1 1 100px" }}>
+              <Text variant="display-strong-s" onBackground="brand-strong">
+                {stat.value}
+              </Text>
+              <Text variant="label-default-xs" onBackground="neutral-weak" align="center">
+                {stat.label}
+              </Text>
+            </Column>
+          ))}
+        </Row>
+      </Column>
+    </RevealFx>
+  );
+};
+
 const ViewCounter = ({ label }: { label: string }) => {
   const [views, setViews] = useState<number | null>(null);
   useEffect(() => {
@@ -121,6 +160,7 @@ export function HomePageClient({ projects, initialLocale }: { projects: ProjectP
            </RevealFx>
         </Column>
       </Column>
+      <ImpactSnapshot locale={locale} title={t.home.impactTitle} />
       <RevealFx translateY="16" delay={0.6}>
         <Projects projects={featuredProject} />
       </RevealFx>

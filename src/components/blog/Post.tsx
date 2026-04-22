@@ -5,12 +5,23 @@ import { formatDate } from "@/utils/formatDate";
 import { person } from "@/resources";
 
 interface PostProps {
-  post: any;
+  post: {
+    slug: string;
+    content: string;
+    metadata: {
+      title: string;
+      publishedAt: string;
+      image?: string;
+      tag?: string;
+    };
+  };
   thumbnail: boolean;
   direction?: "row" | "column";
 }
 
 export default function Post({ post, thumbnail, direction }: PostProps) {
+  const wordCount = typeof post.content === "string" ? post.content.split(/\s+/).filter(Boolean).length : 0;
+  const readingTimeMin = Math.max(1, Math.round(wordCount / 200));
   return (
     <Card
       fillWidth
@@ -33,7 +44,7 @@ export default function Post({ post, thumbnail, direction }: PostProps) {
           cursor="interactive"
           radius="l"
           src={post.metadata.image}
-          alt={"Thumbnail of " + post.metadata.title}
+          alt={`Thumbnail of ${post.metadata.title}`}
           aspectRatio="16 / 9"
         />
       )}
@@ -46,6 +57,9 @@ export default function Post({ post, thumbnail, direction }: PostProps) {
             </Row>
             <Text variant="body-default-xs" onBackground="neutral-weak">
               {formatDate(post.metadata.publishedAt, false)}
+            </Text>
+            <Text variant="body-default-xs" onBackground="neutral-weak">
+              {readingTimeMin} min read
             </Text>
           </Row>
           <Text variant="heading-strong-l" wrap="balance">

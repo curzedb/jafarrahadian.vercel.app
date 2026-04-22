@@ -202,10 +202,35 @@ export default async function About() {
       }
     : aboutBase;
 
+  const selectedWinsTitle = isIndonesian ? "Pencapaian Terpilih" : "Selected Wins";
+
+  const wins = isIndonesian
+    ? [
+        { icon: "🥇", title: "Juara 1 Quality Control Circle", desc: "Internal Claim App — Efisiensi naik 40% di PT. AVI" },
+        { icon: "🏅", title: "Juara 4 Quality Control Circle", desc: "Otomasi RFQ — Efisiensi naik 10-30% di PT. AVI" },
+        { icon: "⚡", title: "50% Lebih Cepat Pencarian Info", desc: "Chatbot AI berbasis RAG untuk knowledge base internal" },
+        { icon: "🤖", title: "Sistem ML di Produksi", desc: "Monitoring prediktif kompresor — Risiko kegagalan turun 5-15%" },
+        { icon: "🔒", title: "Risiko Kehilangan Data -80%", desc: "Sistem backup database otomatis dengan SSMS" },
+        { icon: "📊", title: "IPK 3.82/4.00", desc: "Sarjana Teknik Informatika, UHAMKA" },
+      ]
+    : [
+        { icon: "🥇", title: "1st Place QCC Winner", desc: "Internal Claim App — 40% efficiency gain at PT. AVI" },
+        { icon: "🏅", title: "4th Place QCC Winner", desc: "RFQ Automation — 10-30% efficiency boost at PT. AVI" },
+        { icon: "⚡", title: "50% Faster Info Retrieval", desc: "RAG-powered AI chatbot for internal knowledge base" },
+        { icon: "🤖", title: "Production ML System", desc: "Compressor predictive monitoring — 5-15% failure risk reduction" },
+        { icon: "🔒", title: "80% Less Data Loss Risk", desc: "Automated DB backup system with SSMS" },
+        { icon: "📊", title: "GPA 3.82/4.00", desc: "Bachelor's in Informatics Engineering, UHAMKA" },
+      ];
+
   const structure = [
     {
       title: about.intro.title,
       display: about.intro.display,
+      items: [],
+    },
+    {
+      title: selectedWinsTitle,
+      display: true,
       items: [],
     },
     {
@@ -383,6 +408,43 @@ export default async function About() {
               {about.intro.description}
             </Column>
           )}
+
+          {/* Selected Wins */}
+          <Column id={selectedWinsTitle} fillWidth marginBottom="40">
+            <Heading as="h2" variant="display-strong-s" marginBottom="m">
+              {selectedWinsTitle}
+            </Heading>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
+                gap: "12px",
+              }}
+            >
+              {wins.map((win) => (
+                <Row
+                  key={win.title}
+                  gap="12"
+                  vertical="start"
+                  paddingX="16"
+                  paddingY="16"
+                  style={{
+                    borderRadius: "var(--radius-m)",
+                    background: "var(--neutral-alpha-weak)",
+                    border: "1px solid var(--neutral-alpha-medium)",
+                  }}
+                >
+                  <Text variant="heading-strong-l">{win.icon}</Text>
+                  <Column gap="4">
+                    <Text variant="label-strong-s">{win.title}</Text>
+                    <Text variant="body-default-xs" onBackground="neutral-weak">
+                      {win.desc}
+                    </Text>
+                  </Column>
+                </Row>
+              ))}
+            </div>
+          </Column>
 
           {about.work.display && (
             <>

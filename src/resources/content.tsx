@@ -71,7 +71,7 @@ const home: Home = {
     ),
     href: "/work/spp-app",
   },
-  subline: <>“Innovating with AI and technology for real-world impact.”</>,
+  subline: <>From LSTM forecasting to RAG chatbots — I build AI systems that work in production.</>,
 };
 
 const about: About = {
@@ -111,17 +111,17 @@ const about: About = {
         timeframe: "June 2025 - Present",
         role: "Full-Stack Web Dev and AI/ML Engineer Internship",
         achievements: [
-          <>Built an automated RFQ email system, boosting operational efficiency by up to 10%-30% (4th Place Quality Control Circle Winner at PT. AVI) .</>,
-          <>Developed a web-based workflow system for internal claims, improving process automation by up to 25%-35% (1st Place Quality Control Circle Winner at PT. AVI).</>,
-          <>Created an AI-powered chatbot for document search, accelerating information retrieval by up to 50%.</>,
-          <>Engineered a web-based monitoring solution for compressors using ML, reducing production failure risk by up to 5-15%.</>,
-          <>Designed and implemented an automated database backup system to ensure data integrity, mitigating the risk of data loss due to human error by up to 80% (use SSMS).</>,
-          <>Developed a web-based data management dashboard for monitoring PC resource usage (CPU, GPU, RAM, Disk) using Windows Exporter, Prometheus, and Grafana, reducing application crash risk caused by sudden resource spikes by approximately 25%.</>,
-          <>Managed and maintained 5 Windows Server VMs, handling system configuration, software installation, upgrades, and ensuring high availability for critical applications. Successfully executed a server application migration with Vendor in response to new network segmentation, ensuring minimal downtime and operational continuity.</>,
-          <>Built a comprehensive Internal Control Audit Review web application for managing and tracking audit processes, SOP compliance monitoring, and generating detailed PDF/Excel reports.</>,
-          <>Managed and maintained Scrap Control and Record Delivery applications, implementing feature enhancements, bug fixes, and version upgrades to improve operational efficiency. Reduce downtime up to 25%.</>,
-          <>Developed a secure RESTful API for Infor LN to automate GR (Goods Receipt) workflows, specifically handling real-time flag updates through LOT management. Integrated authenticated access protocols to ensure secure data exchange and standardized retrieval for internal systems.</>,
-          <>Architected a Laravel-based dashboard to monitor the end-to-end flow of automated GR transactions from Infor LN. Streamlined operational oversight by centralizing data from Infor LN and REST APIs into an accessible, real-time tracking interface.</>,
+          "Built an automated RFQ email system, boosting operational efficiency by up to 10%-30% (4th Place Quality Control Circle Winner at PT. AVI).",
+          "Developed a web-based workflow system for internal claims, improving process automation by up to 25%-35% (1st Place Quality Control Circle Winner at PT. AVI).",
+          "Created an AI-powered chatbot for document search, accelerating information retrieval by up to 50%.",
+          "Engineered a web-based monitoring solution for compressors using ML, reducing production failure risk by up to 5-15%.",
+          "Designed and implemented an automated database backup system to ensure data integrity, mitigating the risk of data loss due to human error by up to 80% (use SSMS).",
+          "Developed a web-based data management dashboard for monitoring PC resource usage (CPU, GPU, RAM, Disk) using Windows Exporter, Prometheus, and Grafana, reducing application crash risk caused by sudden resource spikes by approximately 25%.",
+          "Managed and maintained 5 Windows Server VMs, handling system configuration, software installation, upgrades, and ensuring high availability for critical applications. Successfully executed a server application migration with Vendor in response to new network segmentation, ensuring minimal downtime and operational continuity.",
+          "Built a comprehensive Internal Control Audit Review web application for managing and tracking audit processes, SOP compliance monitoring, and generating detailed PDF/Excel reports.",
+          "Managed and maintained Scrap Control and Record Delivery applications, implementing feature enhancements, bug fixes, and version upgrades to improve operational efficiency. Reduce downtime up to 25%.",
+          "Developed a secure RESTful API for Infor LN to automate GR (Goods Receipt) workflows, specifically handling real-time flag updates through LOT management. Integrated authenticated access protocols to ensure secure data exchange and standardized retrieval for internal systems.",
+          "Architected a Laravel-based dashboard to monitor the end-to-end flow of automated GR transactions from Infor LN. Streamlined operational oversight by centralizing data from Infor LN and REST APIs into an accessible, real-time tracking interface.",
         ],
         images: [
           { src: "/images/projects/avi/rfq.png", alt: "RFQ", width: 16, height: 9 },
@@ -135,8 +135,8 @@ const about: About = {
         timeframe: "Feb 2023 - June 2023",
         role: "Multimedia",
         achievements: [
-          <>Created onboarding video tutorials for 25+ new UHAMKA lecturers.</>,
-          <>Operated camera and live-streamed a conference for 250+ attendees using vMix and OBS.</>,
+          "Created onboarding video tutorials for 25+ new UHAMKA lecturers.",
+          "Operated camera and live-streamed a conference for 250+ attendees using vMix and OBS.",
         ],
         images: [],
       },
@@ -422,7 +422,7 @@ const blog: Blog = {
 const work: Work = {
   path: "/work",
   label: "Projects",
-  title: `List of my projects`,
+  title: "List of my projects",
   description: `Tech projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
