@@ -72,7 +72,7 @@ export default async function About() {
             if (experience.company === "PT. Astra Visteon Indonesia") {
               return {
                 ...experience,
-                timeframe: "Juni 2025 - Sekarang",
+                timeframe: "Juni 2025 - Mei 2026",
                 role: "Magang Full-Stack Web Developer dan AI/ML Engineer",
                 achievements: [
                   "Membangun sistem email RFQ otomatis, meningkatkan efisiensi operasional hingga 10%-30% (Juara 4 Quality Control Circle di PT. AVI).",
@@ -151,7 +151,7 @@ export default async function About() {
                   <>
                     Coding Camp didukung oleh DBS Foundation
                     <br />
-                    Feb 2026 - Sekarang · 2 bln
+                    Feb 2026 - Mar 2026 · 2 bln
                     <br />
                     Remote
                     <br />

@@ -108,7 +108,7 @@ const about: About = {
     experiences: [
       {
         company: "PT. Astra Visteon Indonesia",
-        timeframe: "June 2025 - Present",
+        timeframe: "June 2025 - May 2026",
         role: "Full-Stack Web Dev and AI/ML Engineer Internship",
         achievements: [
           "Built an automated RFQ email system, boosting operational efficiency by up to 10%-30% (4th Place Quality Control Circle Winner at PT. AVI).",
@@ -180,7 +180,7 @@ const about: About = {
           <>
             Coding Camp powered by DBS Foundation
             <br />
-            Feb 2026 - Present · 2 mos
+            Feb 2026 - Mar 2026 · 2 mos
             <br />
             Remote
             <br />
