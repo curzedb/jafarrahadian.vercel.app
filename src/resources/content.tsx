@@ -107,7 +107,18 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
+        company: "PT. Infrapro Digital Teknologi",
+        location: "West Jakarta, Indonesia",
+        timeframe: "May 2026 - Present",
+        role: "L1 Engineer (Full-time)",
+        achievements: [
+          "L1 Engineer for Z-Stack Hypervisor cloud platform in Indonesia region.",
+        ],
+        images: [],
+      },
+      {
         company: "PT. Astra Visteon Indonesia",
+        location: "West Java, Indonesia",
         timeframe: "June 2025 - May 2026",
         role: "Full-Stack Web Dev and AI/ML Engineer Internship",
         achievements: [

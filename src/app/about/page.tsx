@@ -69,9 +69,22 @@ export default async function About() {
           ...aboutBase.work,
           title: "Pengalaman Kerja",
           experiences: aboutBase.work.experiences.map((experience) => {
+            if (experience.company === "PT. Infrapro Digital Teknologi") {
+              return {
+                ...experience,
+                location: "Jakarta Barat, Indonesia",
+                timeframe: "Mei 2026 - Sekarang",
+                role: "L1 Engineer (Penuh Waktu)",
+                achievements: [
+                  "L1 Engineer untuk platform cloud Z-Stack Hypervisor di wilayah Indonesia.",
+                ],
+              };
+            }
+
             if (experience.company === "PT. Astra Visteon Indonesia") {
               return {
                 ...experience,
+                location: "Jawa Barat, Indonesia",
                 timeframe: "Juni 2025 - Mei 2026",
                 role: "Magang Full-Stack Web Developer dan AI/ML Engineer",
                 achievements: [
@@ -456,7 +469,9 @@ export default async function About() {
                   <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth>
                     <Row fillWidth horizontal="between" vertical="end" marginBottom="4">
                       <Text id={experience.company} variant="heading-strong-l">
-                        {experience.company}
+                        {experience.location
+                          ? `${experience.company} - ${experience.location}`
+                          : experience.company}
                       </Text>
                       <Text variant="heading-default-xs" onBackground="neutral-weak">
                         {experience.timeframe}
