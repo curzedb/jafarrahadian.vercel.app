@@ -203,6 +203,12 @@ export default async function About() {
             if (skill.title === "CI/CD, Monitoring, and Testing Software") {
               return { ...skill, title: "CI/CD, Monitoring, dan Software Testing", description: <>Kemampuan menggunakan berbagai software untuk tracking data, monitoring, dan layanan pengembangan aplikasi.</> };
             }
+            if (skill.title === "Cloud Computing & Hypervisor") {
+              return { ...skill, title: "Cloud Computing & Hypervisor", description: <>Platform infrastruktur cloud dan teknologi hypervisor.</> };
+            }
+            if (skill.title === "Operating System") {
+              return { ...skill, title: "Sistem Operasi", description: <>Sistem operasi server dan desktop.</> };
+            }
             if (skill.title === "Office Software") {
               return { ...skill, title: "Perangkat Lunak Perkantoran", description: <>Kemampuan menggunakan berbagai software perkantoran untuk visualisasi data dan pekerjaan operasional.</> };
             }

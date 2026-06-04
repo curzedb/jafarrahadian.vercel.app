@@ -348,6 +348,52 @@ const about: About = {
         images: [],
       },
       {
+        title: "Cloud Computing & Hypervisor",
+        description: <>Cloud infrastructure platforms and hypervisor technologies.</>,
+        tags: [
+          {
+            name: "ZStack",
+            icon: "zstack",
+          },
+          {
+            name: "OpenStack",
+            icon: "openstack",
+          },
+          {
+            name: "VMware",
+            icon: "vmware",
+          },
+        ],
+        images: [],
+      },
+      {
+        title: "Operating System",
+        description: <>Server and desktop operating systems.</>,
+        tags: [
+          {
+            name: "Windows Server",
+            icon: "windowsserver",
+          },
+          {
+            name: "Ubuntu Server",
+            icon: "ubuntu",
+          },
+          {
+            name: "Debian",
+            icon: "debian",
+          },
+          {
+            name: "CentOS",
+            icon: "centos",
+          },
+          {
+            name: "Linux",
+            icon: "linux",
+          },
+        ],
+        images: [],
+      },
+      {
         title: "Office Software",
         description: <>Proficiency in various Office software for data visualization and office workload.</>,
         tags: [

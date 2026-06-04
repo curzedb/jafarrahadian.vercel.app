@@ -68,6 +68,12 @@ import {
   SiCanva,
   SiSocketdotio,
   SiStreamlit,
+  SiOpenstack,
+  SiVmware,
+  SiUbuntu,
+  SiLinux,
+  SiCentos,
+  SiDebian,
 } from "react-icons/si";
 
 import {
@@ -90,6 +96,7 @@ import {
   FaMagnifyingGlass,
   FaServer,
   FaN,
+  FaWindows,
 } from "react-icons/fa6";
 
 export const iconLibrary: Record<string, IconType> = {
@@ -171,6 +178,14 @@ export const iconLibrary: Record<string, IconType> = {
   NSSM: FaN,
   aftereffect: SiAdobeaftereffects,
   lrc: SiAdobelightroomclassic,
+  openstack: SiOpenstack,
+  vmware: SiVmware,
+  zstack: FaServer,
+  ubuntu: SiUbuntu,
+  linux: SiLinux,
+  centos: SiCentos,
+  debian: SiDebian,
+  windowsserver: FaWindows,
 };
 
 export type IconLibrary = typeof iconLibrary;
