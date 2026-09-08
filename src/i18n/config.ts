@@ -33,10 +33,13 @@ export const i18n = {
       views: "views",
       aboutButton: "About Me",
       impactTitle: "At a Glance",
+      headline: "I'm Jafar Rahadian, L1 Cloud Engineer & Freelance Developer",
+      subline:
+        "Specializing in cloud infrastructure & hypervisors, while building production-grade AI and full-stack solutions as a freelancer.",
       profileParagraph1:
-        "Informatics Engineering graduate with strong expertise in Machine Learning and Full-Stack Web Development. Skilled in developing AI-driven solutions, data analysis workflows, and end-to-end web applications. Proficient in Python (TensorFlow, Scikit-learn, Pandas, NumPy), SQL databases (MySQL, PostgreSQL, SQL Server, SQLite), Web App (Next.JS, Laravel, Tailwind, Material UI, and Once UI) and containerization with Docker.",
+        "Informatics Engineering graduate currently focusing as an L1 Cloud Engineer, with hands-on expertise in cloud platform operations and hypervisor environments like ZStack. In addition to cloud infrastructure, I actively work as a Freelance Full-Stack Web Developer and Machine Learning Engineer, building robust end-to-end web applications and intelligent AI-driven systems.",
       profileParagraph2:
-        "Experienced in building responsive frontends with Next.Js, Laravel 12, and CI4, and developing backend systems with PHP and Fast API Python. At PT. Astra Visteon Indonesia, contributed to projects involving AI, process automation, and system development, delivering measurable improvements in efficiency and performance. A fast learner with a passion for innovation, committed to leveraging technology to create impactful solutions.",
+        "Skilled in Linux and Windows Server administration, containerization with Docker, and performance monitoring with Prometheus and Grafana. Proficient in modern full-stack development (Next.js, React, Laravel, FastAPI, SQL/NoSQL databases) and machine learning workflows (TensorFlow, Scikit-learn, RAG, MLOps). At PT. Infrapro Digital Teknologi, I handle ZStack cloud hypervisor operations, supported by my previous achievements at PT. Astra Visteon Indonesia in building award-winning process automations, AI chatbots, and predictive monitoring tools. A fast learner committed to infrastructure reliability and delivering high-impact technological solutions.",
     },
     work: {
       listTitle: "List of my projects",
@@ -95,10 +98,13 @@ export const i18n = {
       views: "dilihat",
       aboutButton: "Tentang Saya",
       impactTitle: "Ringkasan",
+      headline: "Saya Jafar Rahadian, L1 Cloud Engineer & Freelance Developer",
+      subline:
+        "Fokus pada infrastruktur cloud & hypervisor, serta berpengalaman membangun solusi AI dan web full-stack siap produksi secara freelance.",
       profileParagraph1:
-        "Lulusan Teknik Informatika dengan keahlian kuat di bidang Machine Learning dan Full-Stack Web Development. Berpengalaman mengembangkan solusi berbasis AI, alur analisis data, serta aplikasi web end-to-end. Menguasai Python (TensorFlow, Scikit-learn, Pandas, NumPy), basis data SQL (MySQL, PostgreSQL, SQL Server, SQLite), pengembangan Web App (Next.JS, Laravel, Tailwind, Material UI, dan Once UI), serta containerization dengan Docker.",
+        "Lulusan Teknik Informatika yang saat ini berfokus sebagai L1 Cloud Engineer, dengan keahlian dalam operasional infrastruktur cloud dan teknologi hypervisor seperti ZStack. Di samping fokus utama pada teknologi cloud, saya juga aktif berkarya sebagai Freelance Full-Stack Web Developer dan Machine Learning Engineer, membangun sistem web end-to-end yang tangguh serta solusi cerdas berbasis AI.",
       profileParagraph2:
-        "Berpengalaman membangun frontend responsif dengan Next.Js, Laravel 12, dan CI4, serta mengembangkan sistem backend dengan PHP dan Fast API Python. Di PT. Astra Visteon Indonesia, berkontribusi pada proyek AI, otomatisasi proses, dan pengembangan sistem dengan dampak peningkatan efisiensi serta performa yang terukur. Cepat belajar, berorientasi inovasi, dan berkomitmen memanfaatkan teknologi untuk solusi yang berdampak.",
+        "Menguasai administrasi server Linux dan Windows Server, containerization dengan Docker, serta sistem monitoring performa (Prometheus & Grafana). Berpengalaman mengembangkan frontend & backend modern (Next.js, React, Laravel, FastAPI, basis data SQL/NoSQL) serta implementasi AI/ML (TensorFlow, Scikit-learn, RAG, MLOps). Di PT. Infrapro Digital Teknologi, saya menangani operasional platform cloud ZStack, diperkuat pengalaman sebelumnya di PT. Astra Visteon Indonesia dalam membangun otomasi proses, chatbot AI, dan sistem pemantauan prediktif. Pembelajar cepat dan berorientasi pada inovasi teknologi yang andal serta berdampak nyata.",
     },
     work: {
       listTitle: "Daftar proyek saya",

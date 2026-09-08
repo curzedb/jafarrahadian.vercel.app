@@ -24,7 +24,7 @@ export async function generateMetadata() {
   const aboutTitle = locale === "id" ? `Tentang – ${person.name}` : aboutBase.title;
   const aboutDescription =
     locale === "id"
-      ? `Kenali ${person.name}, Engineer ML/AI dan Full-Stack Web Developer dari ${person.location}`
+      ? `Kenali ${person.name}, L1 Cloud Engineer serta Freelance Full-Stack & ML Engineer dari ${person.location}`
       : aboutBase.description;
 
   return Meta.generate({
@@ -41,7 +41,7 @@ export default async function About() {
   const isIndonesian = locale === "id";
 
   const localizedRole = isIndonesian
-    ? "Engineer ML/AI dan Full-Stack Web Developer"
+    ? "L1 Cloud Engineer | Freelance Full-Stack & ML Engineer"
     : person.role;
   const localizedLanguages = isIndonesian
     ? ["Inggris", "Bahasa Indonesia"]
@@ -57,11 +57,10 @@ export default async function About() {
           title: "Perkenalan",
           description: (
             <>
-              Lulusan Teknik Informatika dengan keahlian kuat di bidang Machine Learning dan Full-Stack Web Development.
-              Berpengalaman mengembangkan solusi berbasis AI, alur analisis data, serta aplikasi web end-to-end.
-              Menguasai Python (TensorFlow, Scikit-learn, Pandas, NumPy), basis data SQL (MySQL, PostgreSQL, SQL Server, SQLite),
-              pengembangan Web App (Next.JS, Laravel, Tailwind, Material UI, dan Once UI), serta containerization dengan Docker.
-              Cepat belajar, berorientasi inovasi, dan berkomitmen memanfaatkan teknologi untuk solusi yang berdampak.
+              Lulusan Teknik Informatika yang saat ini berfokus sebagai L1 Cloud Engineer, dengan keahlian dalam mengelola infrastruktur cloud dan platform hypervisor seperti ZStack.
+              Di samping infrastruktur cloud, saya juga aktif sebagai Freelance Full-Stack Web Developer dan Machine Learning Engineer.
+              Menguasai administrasi server Linux/Windows Server, containerization dengan Docker, sistem monitoring (Prometheus &amp; Grafana), pengembangan web modern (Next.js, Laravel, FastAPI, basis data SQL), serta pemodelan AI/ML (TensorFlow, Scikit-learn, RAG, MLOps).
+              Cepat belajar, adaptif, dan berdedikasi tinggi untuk menjaga keandalan infrastruktur serta menghadirkan inovasi teknologi yang efisien dan berdampak positif.
             </>
           ),
         },
@@ -74,9 +73,9 @@ export default async function About() {
                 ...experience,
                 location: "Jakarta Barat, Indonesia",
                 timeframe: "Mei 2026 - Sekarang",
-                role: "L1 Engineer (Penuh Waktu)",
+                role: "L1 Cloud Engineer (Penuh Waktu)",
                 achievements: [
-                  "L1 Engineer untuk platform cloud Z-Stack Hypervisor di wilayah Indonesia.",
+                  "L1 Cloud Engineer untuk platform cloud Z-Stack Hypervisor di wilayah Indonesia.",
                 ],
               };
             }

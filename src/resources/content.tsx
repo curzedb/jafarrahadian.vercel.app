@@ -19,7 +19,7 @@ const person: Person = {
   firstName: "Jafar",
   lastName: "Rahadian",
   name: "Jafar Rahadian",
-  role: " ML/AI Engineer and Full-Stack Web Dev ",
+  role: "L1 Cloud Engineer | Freelance Full-Stack & ML Engineer",
   avatar: "/images/foto.png",
   email: "muhammadjafar954@gmail.com",
   location: "Asia/Jakarta",
@@ -56,8 +56,8 @@ const home: Home = {
   image: "/images/og/home.jpg",
   label: "Home",
   title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>I&apos;m Jafar Rahadian, AI/ML Engineer and Full-Stack Developer</>,
+  description: `Portfolio website showcasing my work as an ${person.role}`,
+  headline: <>I&apos;m Jafar Rahadian, L1 Cloud Engineer &amp; Freelance Developer</>,
   featured: {
     display: true,
     title: (
@@ -71,7 +71,7 @@ const home: Home = {
     ),
     href: "/work/spp-app",
   },
-  subline: <>From LSTM forecasting to RAG chatbots — I build AI systems that work in production.</>,
+  subline: <>Specializing in cloud infrastructure &amp; hypervisors, while building production-grade AI and full-stack solutions as a freelancer.</>,
 };
 
 const about: About = {
@@ -95,10 +95,10 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Recent Informatics Engineering graduate with strong expertise in Machine Learning and Full-Stack Web Development.
-        Skilled in developing AI-driven solutions, data analysis workflows, and end-to-end web applications.
-        Proficient in Python (TensorFlow, Scikit-learn, Pandas, NumPy), SQL databases (MySQL, PostgreSQL, SQL Server, SQLite), Web App (Next.JS, Laravel, Tailwind, Material UI, and Once UI) and containerization with Docker.
-        A fast learner with a passion for innovation, committed to leveraging technology to create impactful solutions.
+        Recent Informatics Engineering graduate currently focusing as an L1 Cloud Engineer, with hands-on expertise in managing cloud platforms and hypervisor environments like ZStack.
+        Alongside cloud infrastructure, I actively work as a Freelance Full-Stack Web Developer and Machine Learning Engineer.
+        Proficient in Linux/Windows Server administration, Docker containerization, system monitoring (Prometheus &amp; Grafana), full-stack web engineering (Next.js, Laravel, FastAPI, SQL databases), and AI/ML workflows (TensorFlow, Scikit-learn, RAG, MLOps).
+        A fast learner dedicated to ensuring infrastructure reliability and crafting innovative, high-impact solutions.
       </>
     ),
   },
@@ -110,9 +110,9 @@ const about: About = {
         company: "PT. Infrapro Digital Teknologi",
         location: "West Jakarta, Indonesia",
         timeframe: "May 2026 - Present",
-        role: "L1 Engineer (Full-time)",
+        role: "L1 Cloud Engineer (Full-time)",
         achievements: [
-          "L1 Engineer for Z-Stack Hypervisor cloud platform in Indonesia region.",
+          "L1 Cloud Engineer for Z-Stack Hypervisor cloud platform in Indonesia region.",
         ],
         images: [],
       },
@@ -492,9 +492,34 @@ const certificates: Certificates = {
   description: `Professional certifications and credentials earned by ${person.name}`,
   items: [
     {
+      name: "ZStack Cloud Computing Consultant (ZCCC)",
+      issuer: "ZStack International",
+      date: "2026",
+      credentialId: "ZCCC260553017",
+      link: "https://product.zstack-cloud.com/ct/ZCCC260553017-Muhamad-Jafar-Rahadian.png?ts=1779330008",
+      skills: ["Cloud Computing", "Hypervisor", "Cloud Architecture", "ZStack"],
+    },
+    {
+      name: "ZStack Cloud Computing Technician (ZCCT)",
+      issuer: "ZStack International",
+      date: "2026",
+      credentialId: "ZCCT260543020",
+      link: "https://product.zstack-cloud.com/ct/ZCCT260543020-Muhamad-Jafar-Rahadian.png?ts=1779330008",
+      skills: ["Hypervisor", "Cloud Computing", "Linux", "System Administration", "ZStack"],
+    },
+    {
+      name: "FCIA-Server (xFusion Certified ICT Associate - Server)",
+      issuer: "xFusion Global",
+      date: "2026",
+      credentialId: "XFU01FCIA012170",
+      link: "https://xlearning.xfusion.com/partner/",
+      skills: ["Servers", "Server Administration", "Data Center", "Hardware", "xFusion"],
+    },
+    {
       name: "Machine Learning with TensorFlow",
       issuer: "Dev.id",
       date: "2025",
+      credentialId: "L8W5O820RO",
       link: "https://dev.id/certificate/verify/L8W5O820RO",
       skills: ["TensorFlow", "Machine Learning", "Deep Learning"],
     },

@@ -21,6 +21,7 @@ interface CertificateCardProps {
     name: string;
     issuer: string;
     date: string;
+    credentialId?: string;
     link?: string;
     skills?: string[];
     index: number;
@@ -31,6 +32,7 @@ const CertificateCard: React.FC<CertificateCardProps> = ({
     name,
     issuer,
     date,
+    credentialId,
     link,
     skills,
     index,
@@ -58,12 +60,19 @@ const CertificateCard: React.FC<CertificateCardProps> = ({
                         </Column>
                     </Row>
 
-                    {/* Date */}
-                    <Row gap="8" vertical="center">
-                        <Calendar size={14} className={styles.metaIcon} />
-                        <Text variant="label-default-s" onBackground="neutral-weak">
-                            {date}
-                        </Text>
+                    {/* Date & Credential ID */}
+                    <Row gap="16" vertical="center" wrap>
+                        <Row gap="8" vertical="center">
+                            <Calendar size={14} className={styles.metaIcon} />
+                            <Text variant="label-default-s" onBackground="neutral-weak">
+                                {date}
+                            </Text>
+                        </Row>
+                        {credentialId && (
+                            <Text variant="label-default-xs" onBackground="neutral-weak" style={{ opacity: 0.85 }}>
+                                ID: {credentialId}
+                            </Text>
+                        )}
                     </Row>
 
                     {/* Skills */}
@@ -115,6 +124,8 @@ export default function CertificatesPage() {
     );
 
     const issuerOrder = [
+        "ZStack International",
+        "xFusion Global",
         "Dicoding Indonesia",
         "Dev.id",
         "Microsoft / Certiport",
@@ -210,10 +221,11 @@ export default function CertificatesPage() {
                             const idx = globalIndex++;
                             return (
                                 <CertificateCard
-                                    key={cert.name}
+                                    key={`${cert.name}-${cert.credentialId || cert.date}`}
                                     name={cert.name}
                                     issuer={cert.issuer}
                                     date={cert.date}
+                                    credentialId={cert.credentialId}
                                     link={cert.link}
                                     skills={cert.skills}
                                     index={idx}

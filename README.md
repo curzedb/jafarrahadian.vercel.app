@@ -3,7 +3,7 @@
 [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://jafarrahadian.vercel.app)
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge&logo=github)](https://github.com/curzedb/jafarrahadian.vercel.app)
 
-Welcome to my personal portfolio repository. This website showcases my projects, work experience, certifications, and skills in AI/ML Engineering and Full-Stack Web Development.
+Welcome to my personal portfolio repository. This website showcases my projects, work experience, certifications, and skills as an L1 Cloud Engineer, Freelance Full-Stack Developer, and Machine Learning Engineer.
 
 ## 🚀 Live Demo
 
@@ -11,10 +11,11 @@ Welcome to my personal portfolio repository. This website showcases my projects,
 
 ## ✨ Features
 
-- **Home** - Introduction and featured project showcase
+- **Home** - Introduction, profile summary, impact metrics, and featured project showcase
 - **About** - Work experience, education, and technical skills
 - **Projects** - Detailed case studies with impact metrics
-- **Certificates** - Professional certifications (Dicoding, Microsoft, etc.)
+- **Certificates** - Professional credentials & certifications (ZStack, xFusion, Dicoding, Microsoft, etc.) with credential verification
+- **Bilingual Support** - English & Bahasa Indonesia with dynamic localization
 - **Gallery** - Photo collection
 
 ## 🛠️ Tech Stack
